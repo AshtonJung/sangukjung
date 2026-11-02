@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sang-Uk Jung · Marketing Professor · HUFS</title>
+<meta name="description" content="Sang-Uk Jung, Professor of Marketing at Hankuk University of Foreign Studies. Marketing analytics, NLP, empirical generalizations.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sangukjung.com/">
+<meta property="og:title" content="Sang-Uk Jung · Marketing Professor · HUFS">
+<meta property="og:description" content="마케팅 퀀트, 한국외국어대학교 교수. 통계와 NLP로 시장을 읽습니다.">
+<meta property="og:image" content="https://sangukjung.com/assets/sitting.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b1730; --navy2:#12224a; --ivory:#f6f1e7; --paper:#fbf8f1;
+  --blue:#1e9be0; --gold:#b8975a; --ink:#16213b; --mute:#6c7690;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Apple SD Gothic Neo','Noto Sans KR',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.serif{font-family:'Cormorant Garamond','Noto Serif KR',Georgia,serif}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:18px 5vw;color:#fff;mix-blend-mode:normal;background:linear-gradient(#0b1730cc,#0b173000)}
+nav .logo{font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.04em}
+nav .logo b{color:var(--blue)}
+nav ul{display:flex;gap:26px;list-style:none;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+nav a{text-decoration:none;opacity:.85}nav a:hover{opacity:1;color:var(--blue)}
+@media(max-width:760px){nav ul{display:none}}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;background:radial-gradient(1200px 700px at 75% 40%,#1c3a78 0%,var(--navy) 60%);color:#fff;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:4vw;padding:110px 6vw 60px;overflow:hidden}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
+.hero .txt{position:relative;z-index:2}
+.eyebrow{font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(48px,7.4vw,108px);line-height:.98;margin:18px 0 22px}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero p.lead{font-size:clamp(16px,1.5vw,20px);max-width:34em;color:#d6dcec;font-weight:300}
+.typed{margin-top:26px;font-size:14px;color:var(--blue);min-height:1.6em}
+.typed::after{content:'▍';animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.btn{padding:13px 26px;border:1px solid #ffffff55;text-decoration:none;font-size:13px;letter-spacing:.14em;text-transform:uppercase;transition:.25s}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px #0006}
+.portrait{position:relative;z-index:2;justify-self:center;width:min(440px,80vw)}
+.portrait .frame{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:220px 220px 6px 6px;border:1px solid #ffffff44;box-shadow:0 40px 90px #000a}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 70%;filter:saturate(1.05) contrast(1.03)}
+.portrait .tag{position:absolute;left:-28px;bottom:36px;background:var(--ivory);color:var(--navy);padding:10px 16px;font-size:12px;letter-spacing:.06em;box-shadow:0 12px 30px #0008}
+.portrait .ring{position:absolute;inset:-18px;border-radius:238px 238px 14px 14px;border:1px dashed #1e9be088;pointer-events:none}
+.scroll{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.3em;color:#9fb0d6;z-index:2}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:120px}.portrait{order:-1;width:min(300px,70vw)}.portrait .tag{left:-8px}}
+
+section{padding:110px 6vw;position:relative}
+.wrap{max-width:1180px;margin:0 auto}
+h2{font-family:'Cormorant Garamond','Noto Serif KR',serif;font-weight:600;font-size:clamp(34px,4.6vw,60px);line-height:1.08;margin:10px 0 18px}
+h2 em{color:var(--blue);font-style:italic}
+.sub{color:var(--mute);max-width:40em;font-size:17px}
+.reveal{opacity:0;transform:translateY(26px);transition:1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ABOUT */
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.about .pic{position:relative}
+.about .pic img{width:100%;border-radius:4px;box-shadow:0 30px 60px #0b173040}
+.about .pic::after{content:'';position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--gold);z-index:-1}
+.about p{margin-bottom:16px;font-size:17px}
+.stats{display:flex;gap:34px;margin-top:30px;flex-wrap:wrap}
+.stats div b{display:block;font-family:'Cormorant Garamond',serif;font-size:46px;color:var(--navy);line-height:1}
+.stats div span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+@media(max-width:900px){.about{grid-template-columns:1fr}}
+
+/* TRAINING LOG */
+.log{background:var(--navy);color:#e8ecf7}
+.log h2{color:#fff}.log .sub{color:#9fb0d6}
+.timeline{margin-top:50px;position:relative;padding-left:34px;border-left:1px solid #ffffff30}
+.ep{position:relative;padding:0 0 38px 10px}
+.ep::before{content:'';position:absolute;left:-41px;top:8px;width:13px;height:13px;border-radius:50%;background:var(--navy);border:2px solid var(--blue);box-shadow:0 0 0 5px #1e9be022}
+.ep .k{font-size:12px;color:var(--blue)}
+.ep h3{font-family:'Cormorant Garamond','Noto Serif KR',serif;font-size:30px;font-weight:600;color:#fff}
+.ep p{color:#aab6d6;font-size:15px}
+.ep .loss{display:inline-block;margin-top:6px;font-size:11px;color:var(--gold);letter-spacing:.06em}
+.ep.now::before{background:var(--blue);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 12px #1e9be000}}
+
+/* GALAXY */
+.galaxy{background:linear-gradient(var(--navy),#081024);color:#fff;padding-bottom:60px}
+.galaxy h2{color:#fff}.galaxy .sub{color:#9fb0d6}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0 8px}
+.chip{border:1px solid #ffffff40;background:transparent;color:#dfe6f7;padding:7px 16px;border-radius:30px;font-size:13px;cursor:pointer;transition:.2s;font-family:inherit}
+.chip.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.gx{position:relative;height:620px;margin-top:10px;border:1px solid #ffffff1c;border-radius:10px;overflow:hidden;background:radial-gradient(circle at 50% 50%,#13255a 0%,#0a1330 70%)}
+.gx svg{width:100%;height:100%;display:block}
+.star{cursor:pointer;transition:opacity .4s}
+.star circle.core{transition:r .35s,filter .3s}
+.star:hover circle.core{filter:brightness(1.4)}
+.star text{fill:#cdd8f3;font-size:11px;pointer-events:none;font-family:Inter}
+.card{position:absolute;right:20px;bottom:20px;width:min(380px,calc(100% - 40px));background:var(--ivory);color:var(--navy);padding:22px 24px;border-radius:6px;box-shadow:0 24px 60px #000a;transform:translateY(20px);opacity:0;pointer-events:none;transition:.35s}
+.card.show{transform:none;opacity:1;pointer-events:auto}
+.card .t{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue)}
+.card h4{font-family:'Cormorant Garamond',serif;font-size:23px;line-height:1.2;margin:6px 0 8px}
+.card .m{font-size:13px;color:var(--mute)}
+.card .c{margin-top:10px;font-size:14px}
+.card .x{position:absolute;top:8px;right:14px;cursor:pointer;font-size:20px;color:var(--mute)}
+.hint{font-size:12px;color:#7f8fb8;margin-top:10px}
+
+/* NOTES */
+.notes .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:26px;margin-top:44px}
+.note{background:#fff;border:1px solid #e6dfcf;padding:28px;transition:.3s;text-decoration:none;display:block}
+.note:hover{transform:translateY(-6px);box-shadow:0 24px 50px #0b173022;border-color:var(--blue)}
+.note .src{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.note h3{font-family:'Cormorant Garamond','Noto Serif KR',serif;font-size:25px;line-height:1.25;margin:10px 0}
+.note p{font-size:14px;color:var(--mute)}
+.note.todo{border-style:dashed;background:transparent}
+
+/* PLAY */
+.play{background:var(--ivory)}
+.lab{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px;background:#fff;padding:36px;border:1px solid #e6dfcf}
+.lab label{display:block;font-size:13px;color:var(--mute);margin:16px 0 4px}
+.lab label b{color:var(--navy);float:right}
+.lab input[type=range]{width:100%;accent-color:var(--blue)}
+.out{background:var(--navy);color:#fff;padding:30px;display:flex;flex-direction:column;justify-content:center}
+.out .big{font-family:'Cormorant Garamond',serif;font-size:72px;line-height:1;color:var(--blue)}
+.out small{color:#9fb0d6}
+.out .joke{margin-top:18px;font-size:13px;color:var(--gold)}
+@media(max-width:800px){.lab{grid-template-columns:1fr}}
+
+/* LIFE */
+.life .row{display:grid;grid-template-columns:1.2fr 1fr;gap:26px;margin-top:40px}
+.life img{width:100%;height:100%;object-fit:cover;border-radius:4px}
+.life figure{position:relative;overflow:hidden;min-height:320px}
+.life figcaption{position:absolute;left:0;bottom:0;right:0;padding:16px 20px;color:#fff;background:linear-gradient(transparent,#000a);font-size:14px}
+@media(max-width:800px){.life .row{grid-template-columns:1fr}}
+
+footer{background:var(--navy);color:#9fb0d6;text-align:center;padding:70px 6vw 50px}
+footer h2{color:#fff}
+footer .links{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin:26px 0;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+footer a{text-decoration:none;color:#fff;border-bottom:1px solid var(--blue);padding-bottom:3px}
+footer .p{font-size:12px;margin-top:30px;opacity:.7}
+.egg{position:fixed;inset:0;z-index:99;pointer-events:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">S.U. <b>Jung</b></div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#training">Training Log</a></li>
+    <li><a href="#galaxy">Papers</a></li>
+    <li><a href="#notes">Field Notes</a></li>
+    <li><a href="#lab">Lab</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <canvas id="bg"></canvas>
+  <div class="txt">
+    <div class="eyebrow">Marketing · Quantitative · Computational</div>
+    <h1>Sang-Uk<br><em>Jung</em></h1>
+    <p class="lead">Professor of Marketing at Hankuk University of Foreign Studies. 통계로 소비자를 읽고, 텍스트에서 시장의 속마음을 꺼내는 마케팅 퀀트입니다.</p>
+    <div class="typed mono" id="typed"></div>
+    <div class="cta">
+      <a class="btn primary" href="#galaxy">Explore the papers</a>
+      <a class="btn" href="#training">Training log</a>
+    </div>
+  </div>
+  <div class="portrait">
+    <div class="ring"></div>
+    <div class="frame"><img src="assets/sitting.jpg" alt="Sang-Uk Jung"></div>
+    <div class="tag mono">P(smile | altitude) → 1.0</div>
+  </div>
+  <div class="scroll">SCROLL</div>
+</header>
+
+<section id="about">
+  <div class="wrap about">
+    <div class="pic reveal"><img src="assets/running.jpg" alt="Running"></div>
+    <div class="reveal">
+      <div class="eyebrow">About</div>
+      <h2>정통 훈련, <em>유쾌한</em> 호기심.</h2>
+      <p>서울대에서 경영학을, 컬럼비아에서 통계학을, 아이오와에서 마케팅 박사를 마쳤습니다. 오클랜드 대학교를 거쳐 2014년부터 한국외국어대학교에서 학생들과 데이터를 읽고 있습니다.</p>
+      <p>관심사는 자연어처리(NLP)로 텍스트에서 마케팅 인사이트를 뽑는 일, 마케팅 애널리틱스, 그리고 "정말 어디서나 성립하는 법칙인가?"를 묻는 경험적 일반화입니다. 가끔은 게임, 항공, 에너지, 화장품 같은 엉뚱한 곳에서도 답을 찾습니다.</p>
+      <div class="stats">
+        <div><b data-n="1433">0</b><span>Citations</span></div>
+        <div><b data-n="12">0</b><span>h-index</span></div>
+        <div><b data-n="4">0</b><span>Degrees</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="log" id="training">
+  <div class="wrap">
+    <div class="eyebrow">Education</div>
+    <h2>Training <em>Log</em></h2>
+    <p class="sub">한 사람이 학습되는 과정. 에폭이 쌓일수록 loss는 줄고 호기심은 늘었습니다.</p>
+    <div class="timeline">
+      <div class="ep reveal"><div class="k mono">epoch 1</div><h3>Troy High School</h3><p>California · 고등학교</p><span class="loss mono">loss: 높음 · 가능성: 무한</span></div>
+      <div class="ep reveal"><div class="k mono">epoch 2</div><h3>Seoul National University</h3><p>B.A. in Business Administration · 경영학</p><span class="loss mono">feature learned: 비즈니스의 문법</span></div>
+      <div class="ep reveal"><div class="k mono">epoch 3</div><h3>Columbia University</h3><p>M.S. in Statistics · 통계학</p><span class="loss mono">feature learned: 불확실성을 숫자로 말하기</span></div>
+      <div class="ep reveal"><div class="k mono">epoch 4</div><h3>University of Iowa</h3><p>Ph.D. in Marketing · 마케팅</p><span class="loss mono">feature learned: 소비자는 확률분포다</span></div>
+      <div class="ep reveal"><div class="k mono">deploy · 2012–14</div><h3>University of Auckland</h3><p>Faculty · 첫 번째 배포 환경</p></div>
+      <div class="ep now reveal"><div class="k mono">production · 2014 → now</div><h3>Hankuk University of Foreign Studies</h3><p>Professor of Marketing · 한국외국어대학교 경영학부</p><span class="loss mono">status: still learning</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="galaxy" id="galaxy">
+  <div class="wrap">
+    <div class="eyebrow">Research</div>
+    <h2>The Paper <em>Galaxy</em></h2>
+    <p class="sub">별 하나가 논문 하나. 크기는 인용 수, 색은 주제입니다. 별을 눌러 보세요.</p>
+    <div class="chips" id="chips"></div>
+    <div class="gx" id="gx">
+      <svg id="svg" viewBox="0 0 1100 620" preserveAspectRatio="xMidYMid meet"></svg>
+      <div class="card" id="card"></div>
+    </div>
+    <div class="hint mono">* 출처: Google Scholar. 한 줄 요약은 순차적으로 채워 넣을 예정입니다.</div>
+  </div>
+</section>
+
+<section class="notes" id="notes">
+  <div class="wrap">
+    <div class="eyebrow">Writing</div>
+    <h2>Field <em>Notes</em></h2>
+    <p class="sub">Medium과 화장품 업계 칼럼에서 가져온 글들입니다.</p>
+    <div class="grid">
+      <a class="note todo" href="https://medium.com/@sangukjung" target="_blank" rel="noopener"><div class="src">Medium</div><h3>Medium 칼럼 보러 가기 →</h3><p>@sangukjung. 글 목록은 자동 연동으로 채울 예정입니다.</p></a>
+      <div class="note todo"><div class="src">Cosmetic Report</div><h3>화장품 칼럼 (링크 대기 중)</h3><p>기사 링크를 주시면 이곳에 카드로 넣겠습니다.</p></div>
+      <div class="note todo"><div class="src">Korea Cosmetic Association</div><h3>화장품협회 칼럼 (링크 대기 중)</h3><p>기사 링크를 주시면 이곳에 카드로 넣겠습니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="play" id="lab">
+  <div class="wrap">
+    <div class="eyebrow">Playground</div>
+    <h2>The <em>Lab</em></h2>
+    <p class="sub">A/B 테스트, 표본이 얼마나 필요할까요? 직접 만져 보세요. (양측검정, 검정력 기준 정규근사)</p>
+    <div class="lab">
+      <div>
+        <label>기준 전환율 <b id="v1">5%</b></label><input id="p" type="range" min="1" max="40" value="5">
+        <label>기대하는 상대적 개선 <b id="v2">10%</b></label><input id="lift" type="range" min="1" max="50" value="10">
+        <label>유의수준 α <b id="v3">0.05</b></label><input id="alpha" type="range" min="1" max="10" value="5">
+        <label>검정력 1−β <b id="v4">80%</b></label><input id="pow" type="range" min="70" max="99" value="80">
+      </div>
+      <div class="out">
+        <small>그룹당 필요한 표본</small>
+        <div class="big mono" id="n">0</div>
+        <small id="tot"></small>
+        <div class="joke" id="joke"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="life">
+  <div class="wrap">
+    <div class="eyebrow">Off Duty</div>
+    <h2>Life, <em>out of sample</em></h2>
+    <div class="row">
+      <figure class="reveal"><img src="assets/golf.jpg" alt="Golf" style="object-position:50% 40%"><figcaption>필드에서. 가장 좋아하는 표본(n=2)과 함께.</figcaption></figure>
+      <figure class="reveal"><img src="assets/running.jpg" alt="Run" style="object-position:50% 20%"><figcaption>러닝. 학회 마감 전 유일한 회귀분석 탈출구.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <h2>Let's <em>talk</em>.</h2>
+  <div class="links">
+    <a href="https://scholar.google.co.kr/citations?user=IJe8BtoAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+    <a href="https://medium.com/@sangukjung" target="_blank" rel="noopener">Medium</a>
+    <a href="https://biz.hufs.ac.kr/profl/biz/398/1963/artclView.do" target="_blank" rel="noopener">HUFS Profile</a>
+  </div>
+  <div class="p mono">© Sang-Uk Jung · 404 대신 이 문장: "p-value가 너무 커서 이 페이지는 기각되었습니다."</div>
+</footer>
+<canvas class="egg" id="egg"></canvas>
+
+<script>
+/* Hero particle field */
+(function(){
+  const c=document.getElementById('bg'),x=c.getContext('2d');let W,H,P=[],m={x:.7,y:.4};
+  function rs(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;P=Array.from({length:Math.min(130,W/9)},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,r:Math.random()*1.6+.4}))}
+  addEventListener('resize',rs);rs();
+  addEventListener('mousemove',e=>{m.x=e.clientX;m.y=e.clientY});
+  (function f(){x.clearRect(0,0,W,H);
+    for(const p of P){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+      const dx=m.x-p.x,dy=m.y-p.y,d=Math.hypot(dx,dy);if(d<140){p.x-=dx*.01;p.y-=dy*.01}
+      x.fillStyle='#9fd3ff';x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fill()}
+    for(let i=0;i<P.length;i++)for(let j=i+1;j<P.length;j++){const d=Math.hypot(P[i].x-P[j].x,P[i].y-P[j].y);if(d<95){x.strokeStyle='rgba(30,155,224,'+(1-d/95)*.35+')';x.beginPath();x.moveTo(P[i].x,P[i].y);x.lineTo(P[j].x,P[j].y);x.stroke()}}
+    requestAnimationFrame(f)})();
+})();
+
+/* Typed */
+(function(){
+  const L=['> import marketing, statistics, nlp','> model.fit(consumers)  # n = 전 세계','> insight = text.extract(market)','> print("Sang-Uk Jung, Professor, HUFS")'];
+  const el=document.getElementById('typed');let i=0,j=0,del=false;
+  (function t(){const s=L[i];el.textContent=s.slice(0,j);
+    if(!del&&j<s.length){j++;setTimeout(t,45)}
+    else if(!del){del=true;setTimeout(t,1500)}
+    else if(j>0){j--;setTimeout(t,18)}
+    else{del=false;i=(i+1)%L.length;setTimeout(t,250)}})();
+})();
+
+/* Reveal + counters */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,n=+el.dataset.n;let v=0;const st=Math.max(1,n/60);
+  (function u(){v=Math.min(n,v+st);el.textContent=Math.round(v).toLocaleString();if(v<n)requestAnimationFrame(u)})();co.unobserve(el)}),{threshold:.5});
+document.querySelectorAll('[data-n]').forEach(e=>co.observe(e));
+
+/* Paper galaxy */
+const TOPICS={
+  'Consumer & Culture':{c:'#ff8fb3',x:260,y:210},
+  'Marketing Science':{c:'#5cc8ff',x:760,y:190},
+  'Strategy & Operations':{c:'#ffd166',x:300,y:450},
+  'Sustainability & Finance':{c:'#7be0a5',x:800,y:440}
+};
+const PAPERS=[
+  {t:'Beyond solitary play in computer games: The social practices of eSports',a:'Y Seo',v:'Journal of Consumer Culture',y:2016,n:450,k:'Consumer & Culture',dx:0,dy:0},
+  {t:'Examining the effect of cultural congruence on online purchase decisions',a:'D Ko, Y Seo',v:'Marketing Letters',y:2015,n:96,k:'Consumer & Culture',dx:120,dy:90},
+  {t:'Excess loyalty in CPG markets: a comprehensive examination',a:'TS Gruca, LL Rego',v:'J. of Empirical Generalisations in Marketing Science',y:2010,n:29,k:'Marketing Science',dx:-70,dy:70},
+  {t:'A meta-analysis of correlations between market share and brand performance',a:'J Zhu, TS Gruca',v:'Journal of Business Research',y:2016,n:25,k:'Marketing Science',dx:90,dy:-60},
+  {t:'The impact of digital marketing innovation on firm performance',a:'V Shegai',v:'Sustainability',y:2023,n:283,k:'Marketing Science',dx:10,dy:110},
+  {t:'A linear programming approach for robust network revenue management',a:'J An, A Mikhaylov',v:'Journal of Air Transport Management',y:2021,n:158,k:'Strategy & Operations',dx:-30,dy:-10},
+  {t:'The strategy of South Korea in the global oil market',a:'J An, A Mikhaylov',v:'Energies',y:2020,n:154,k:'Strategy & Operations',dx:130,dy:50},
+  {t:'Exploring trends in environmental, social, and governance themes',a:'J Park, W Choi',v:'Frontiers in Psychology',y:2022,n:69,k:'Sustainability & Finance',dx:-40,dy:-20},
+  {t:'Harnessing FinTech for sustainable finance in developing countries',a:'J Yang',v:'Sustainability',y:2024,n:20,k:'Sustainability & Finance',dx:90,dy:70}
+];
+const svg=document.getElementById('svg'),card=document.getElementById('card'),NS='http://www.w3.org/2000/svg';
+let filter='All';
+function mk(tag,at){const e=document.createElementNS(NS,tag);for(const k in at)e.setAttribute(k,at[k]);return e}
+// background stars
+for(let i=0;i<110;i++){const s=mk('circle',{cx:Math.random()*1100,cy:Math.random()*620,r:Math.random()*1.2+.2,fill:'#fff',opacity:Math.random()*.6+.1});svg.appendChild(s)}
+// constellation lines within topics
+const lines=mk('g',{});svg.appendChild(lines);
+const stars=mk('g',{});svg.appendChild(stars);
+PAPERS.forEach(p=>{p.X=TOPICS[p.k].x+p.dx;p.Y=TOPICS[p.k].y+p.dy;p.r=Math.max(7,Math.sqrt(p.n)*1.9)});
+function draw(){
+  lines.innerHTML='';stars.innerHTML='';
+  Object.keys(TOPICS).forEach(k=>{
+    const ps=PAPERS.filter(p=>p.k===k),on=filter==='All'||filter===k;
+    for(let i=0;i<ps.length-1;i++)lines.appendChild(mk('line',{x1:ps[i].X,y1:ps[i].Y,x2:ps[i+1].X,y2:ps[i+1].Y,stroke:TOPICS[k].c,'stroke-opacity':on?.35:.05,'stroke-dasharray':'3 4'}));
+    const lb=mk('text',{x:TOPICS[k].x-60,y:TOPICS[k].y-70,fill:TOPICS[k].c,'font-size':12,'letter-spacing':'.15em',opacity:on?.8:.15,'font-family':'Inter'});lb.textContent=k.toUpperCase();lines.appendChild(lb);
+  });
+  PAPERS.forEach((p,i)=>{
+    const on=filter==='All'||filter===p.k,col=TOPICS[p.k].c;
+    const g=mk('g',{class:'star',opacity:on?1:.12});
+    g.appendChild(mk('circle',{cx:p.X,cy:p.Y,r:p.r*2.2,fill:col,opacity:.12}));
+    const core=mk('circle',{class:'core',cx:p.X,cy:p.Y,r:p.r,fill:col});
+    const an=mk('animate',{attributeName:'opacity',values:'1;.7;1',dur:(2+i%4)+'s',repeatCount:'indefinite'});core.appendChild(an);
+    g.appendChild(core);
+    const tx=mk('text',{x:p.X,y:p.Y+p.r+14,'text-anchor':'middle'});tx.textContent=p.y+(p.n>=100?' · '+p.n:'');g.appendChild(tx);
+    g.addEventListener('click',()=>show(p));
+    stars.appendChild(g);
+  });
+}
+function show(p){
+  card.innerHTML='<span class="x" onclick="card.classList.remove(\'show\')">×</span><div class="t">'+p.k+'</div><h4>'+p.t+'</h4><div class="m">'+p.a+' · <i>'+p.v+'</i> · '+p.y+'</div><div class="c">📈 인용 <b>'+p.n+'</b>회</div>';
+  card.classList.add('show');
+}
+const chips=document.getElementById('chips');
+['All',...Object.keys(TOPICS)].forEach(k=>{const b=document.createElement('button');b.className='chip'+(k==='All'?' on':'');b.textContent=k;
+  b.onclick=()=>{filter=k;chips.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c===b));draw()};chips.appendChild(b)});
+draw();
+
+/* A/B calculator */
+function zInv(p){ // Acklam-ish approximation via bisection on erf
+  const erf=x=>{const t=1/(1+.3275911*Math.abs(x)),y=1-(((((1.061405429*t-1.453152027)*t)+1.421413741)*t-.284496736)*t+.254829592)*t*Math.exp(-x*x);return x>=0?y:-y};
+  const cdf=z=>.5*(1+erf(z/Math.SQRT2));let lo=-8,hi=8;for(let i=0;i<60;i++){const m=(lo+hi)/2;cdf(m)<p?lo=m:hi=m}return(lo+hi)/2}
+function calc(){
+  const p1=+document.getElementById('p').value/100,lift=+document.getElementById('lift').value/100,al=+document.getElementById('alpha').value/100,pw=+document.getElementById('pow').value/100;
+  const p2=Math.min(.99,p1*(1+lift)),za=zInv(1-al/2),zb=zInv(pw),pb=(p1+p2)/2;
+  const n=Math.ceil(((za*Math.sqrt(2*pb*(1-pb))+zb*Math.sqrt(p1*(1-p1)+p2*(1-p2)))**2)/((p2-p1)**2));
+  v1.textContent=(p1*100)+'%';v2.textContent=(lift*100)+'%';v3.textContent=al.toFixed(2);v4.textContent=(pw*100)+'%';
+  document.getElementById('n').textContent=n.toLocaleString();
+  tot.textContent='두 그룹 합계 '+(2*n).toLocaleString()+'명';
+  joke.textContent=n>50000?'🙃 "조금만 더 개선되면 좋겠다"는 가장 비싼 말입니다.':n>5000?'😅 표본이 꽤 필요합니다. 커피를 준비하세요.':'😎 이 정도면 이번 주 안에 끝납니다.';
+}
+['p','lift','alpha','pow'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+
+/* Easter egg: type "bayes" */
+(function(){let buf='';addEventListener('keydown',e=>{buf=(buf+e.key).slice(-5).toLowerCase();if(buf==='bayes'){const c=document.getElementById('egg'),x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;
+  const P=Array.from({length:160},()=>({x:innerWidth/2,y:innerHeight/2,vx:(Math.random()-.5)*16,vy:(Math.random()-.8)*16,t:'P(θ|x)∝P(x|θ)P(θ)'[Math.floor(Math.random()*10)]||'θ'}));let f=0;
+  (function a(){x.clearRect(0,0,c.width,c.height);x.fillStyle='#1e9be0';x.font='20px serif';P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.25;x.fillText(p.t,p.x,p.y)});if(++f<140)requestAnimationFrame(a);else x.clearRect(0,0,c.width,c.height)})()}})})();
+</script>
+</body>
+</html>
