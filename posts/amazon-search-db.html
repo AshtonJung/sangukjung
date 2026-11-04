@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>아마존 검색은 구글이 아니다 · Random Walk · Jake Sang-Uk Jung</title>
+<meta name="description" content="아마존은 웹을 검색하지 않고 정리된 상품 데이터베이스를 검색한다. 규격화된 상품 등록은 왜 만들어졌고, 그 대가로 셀러는 무엇을 잃는가.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="아마존 검색은 구글이 아니다">
+<meta property="og:description" content="데이터베이스로서의 아마존과 규격화의 경제학.">
+<meta property="og:image" content="https://ashtonjung.github.io/sangukjung/assets/amazonway/card-catalog.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1730;--navy2:#12224a;--ivory:#f6f1e7;--paper:#fbf8f1;--blue:#1e9be0;--gold:#b8975a;--ink:#16213b;--mute:#6c7690}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Apple SD Gothic Neo','Noto Sans KR',sans-serif;background:var(--paper);color:var(--ink);line-height:1.85;-webkit-font-smoothing:antialiased;font-size:17px}
+a{color:var(--blue)}
+.bar{position:fixed;top:0;left:0;right:0;height:3px;background:var(--blue);transform-origin:0 50%;transform:scaleX(0);z-index:99}
+nav{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;padding:20px 5vw;color:#fff;z-index:5;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+nav a{color:#fff;text-decoration:none;opacity:.85}nav a:hover{opacity:1}
+nav .logo{font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.04em;text-transform:none}
+nav .logo b{color:var(--blue)}
+.hero{background:radial-gradient(1000px 600px at 75% 40%,#1c3a78 0%,var(--navy) 62%);color:#fff;padding:150px 6vw 90px;display:grid;grid-template-columns:1.2fr .8fr;gap:5vw;align-items:center}
+.hero .eyebrow{font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font-family:'Noto Serif KR','Cormorant Garamond',serif;font-weight:700;font-size:clamp(34px,5vw,64px);line-height:1.2;margin:18px 0 18px}
+.hero p{color:#d6dcec;font-size:clamp(16px,1.5vw,20px);font-weight:300;max-width:34em}
+.hero .meta{margin-top:22px;font-size:12px;color:#9fb0d6;letter-spacing:.08em}
+.hero figure{justify-self:center;width:min(360px,70vw)}
+.hero figure img{width:100%;border-radius:200px 200px 6px 6px;border:1px solid #ffffff44;box-shadow:0 40px 90px #000a;display:block;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%}
+.hero figcaption{font-size:11px;color:#9fb0d6;margin-top:10px;text-align:center}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.hero figure{order:-1;width:min(240px,60vw)}}
+article{max-width:760px;margin:0 auto;padding:70px 6vw 40px}
+article p{margin-bottom:1.15em}
+article h2{font-family:'Noto Serif KR','Cormorant Garamond',serif;font-weight:700;font-size:clamp(24px,3vw,32px);line-height:1.3;margin:2.4em 0 .7em;padding-top:.4em;border-top:1px solid #e6dfcf}
+article h2 .n{display:block;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.2em;color:var(--gold);font-weight:500;margin-bottom:6px}
+article strong{color:var(--navy)}
+.lead{font-size:20px;color:var(--ink);font-weight:400}
+.term{display:inline-block;background:#e9f4fc;color:#0d6aa3;font-size:.82em;padding:1px 9px;border-radius:20px;margin:0 2px;white-space:nowrap}
+.pull{margin:1.6em 0;padding:22px 26px;background:var(--navy);color:#fff;border-left:4px solid var(--blue);font-family:'Noto Serif KR',serif;font-size:19px;line-height:1.7}
+figure.img{margin:2em -4vw}
+figure.img img{width:100%;display:block;border-radius:4px;box-shadow:0 20px 50px #0b173030;max-height:560px;object-fit:contain;background:#efe9da}
+figure.img.tall img{max-width:420px;margin:0 auto}
+figure.img figcaption{font-size:13px;color:var(--mute);margin-top:10px;line-height:1.5;text-align:center}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:2em -4vw}
+.two figure{margin:0}.two img{width:100%;height:340px;object-fit:contain;background:#efe9da;border-radius:4px;display:block;box-shadow:0 20px 50px #0b173030}
+.two figcaption{font-size:13px;color:var(--mute);margin-top:8px;line-height:1.5;text-align:center}
+@media(max-width:700px){.two{grid-template-columns:1fr;margin:2em 0}figure.img{margin:2em 0}}
+.video{margin:2.2em -4vw}
+.video .box{position:relative;padding-top:56.25%;background:#000;border-radius:6px;overflow:hidden;box-shadow:0 20px 50px #0b173040}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video p{font-size:13px;color:var(--mute);margin-top:10px;text-align:center}
+@media(max-width:700px){.video{margin:2em 0}}
+table{width:100%;border-collapse:collapse;margin:1.6em 0;font-size:15px;background:#fff;border:1px solid #e6dfcf}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid #eee7d6}
+th{background:var(--navy);color:#fff;font-weight:500;font-size:13px;letter-spacing:.05em}
+td:first-child{font-weight:600;color:var(--navy);white-space:nowrap}
+.tl{list-style:none;margin:1.6em 0;padding-left:26px;border-left:1px solid #d8cfba}
+.tl li{position:relative;padding:0 0 18px 6px;font-size:15.5px;line-height:1.6}
+.tl li::before{content:'';position:absolute;left:-33px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--paper);border:2px solid var(--blue)}
+.tl b{font-family:'JetBrains Mono',monospace;color:var(--blue);font-size:13px;margin-right:8px}
+.box2{background:var(--ivory);border:1px solid #e6dfcf;border-radius:6px;padding:24px 28px;margin:2em 0;font-size:15.5px}
+.box2 h3{font-family:'Noto Serif KR',serif;font-size:19px;margin-bottom:10px;color:var(--navy)}
+.box2 li{margin:6px 0 6px 18px}
+.box2.q{background:var(--navy);color:#e8ecf7;border:none}.box2.q h3{color:#fff}
+.src{font-size:13.5px;color:var(--mute);line-height:1.7}
+.src li{margin:4px 0 4px 18px}
+.back{max-width:760px;margin:0 auto;padding:10px 6vw 90px}
+.back a{display:inline-block;padding:13px 26px;border:1px solid var(--navy);text-decoration:none;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);transition:.25s}
+.back a:hover{background:var(--navy);color:#fff}
+footer{background:var(--navy);color:#9fb0d6;text-align:center;padding:40px 6vw;font-size:12px}
+.hero figure.wide{width:min(480px,86vw)}.hero figure.wide img{border-radius:8px;aspect-ratio:2/1;object-fit:cover;object-position:50% 50%}
+.tl.wide li b{display:inline-block;min-width:52px}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+<nav><a class="logo" href="../index.html">Jake Sang-Uk <b>Jung</b></a><a href="../index.html#notes">← Random Walk</a></nav>
+
+<header class="hero">
+  <div>
+    <div class="eyebrow">Random Walk · The Amazon Way 1</div>
+    <h1>아마존 검색은<br>구글이 아니다</h1>
+    <p>데이터베이스가 된 시장, 그리고 규격화의 경제학</p>
+    <div class="meta">정상욱 · 한국외국어대학교 마케팅 · 읽는 시간 약 10분</div>
+  </div>
+  <figure class="wide">
+    <img src="../assets/amazonway/card-catalog.jpg" alt="나무 서랍식 도서 카드 목록함">
+    <figcaption>도서관의 카드 목록함. 정리된 카드만 찾을 수 있다 · MarkBuckawicki (CC0)</figcaption>
+  </figure>
+</header>
+
+<article>
+<p class="lead">구글에서 “김치찌개 맛있게 끓이는 법”을 검색하면 블로그, 영상, 뉴스, 질문 답변이 한꺼번에 나온다. 그런데 아마존에서 같은 말을 검색하면 어떻게 될까? <strong>상품이 나온다.</strong> 오직 상품만.</p>
+
+<p>당연한 얘기 같지만, 여기에 아마존이 시장을 설계하는 방식의 첫 단추가 있다. 앞의 <a href="sellercentral.html">셀러 센트럴 글</a>에서 아마존은 셀러의 행동을 설계된 길로 이끈다고 했다. 이번 글은 그 길이 어디서 시작되는지, 곧 <strong>‘검색’과 ‘상품 등록’</strong>을 본다. 이 시리즈에서는 이것을 <em>아마존 웨이(The Amazon Way)</em>라고 부르려 한다.</p>
+
+<div class="box2">
+  <h3>이 글에서 확인할 개념</h3>
+  <span class="term">검색 의도</span><span class="term">구조화된 데이터</span><span class="term">카탈로그</span><span class="term">상품 표준화(commoditization)</span><span class="term">검색 비용</span><span class="term">Buy Box</span><span class="term">플랫폼 권력</span>
+</div>
+
+<h2><span class="n">01</span>구글은 웹을 찾고, 아마존은 상품을 찾는다</h2>
+
+<p>구글은 수십억 개의 웹 문서를 뒤져 질문에 가장 도움이 될 만한 것을 골라 준다. 그래서 신뢰도, 링크, 내용의 충실함을 본다. 아마존의 검색은 다르다. <strong>아마존 안에 등록된 상품만</strong> 대상으로 한다. 그리고 사용자는 정보를 얻으러 온 것이 아니라 <strong>사러</strong> 온 사람이다.</p>
+
+<table>
+  <tr><th></th><th>구글</th><th>아마존</th></tr>
+  <tr><td>검색 대상</td><td>웹 전체(문서, 영상, 뉴스 등)</td><td>아마존 카탈로그에 등록된 상품</td></tr>
+  <tr><td>사용자 의도</td><td>알고 싶다(정보), 가고 싶다, 사고 싶다</td><td>대부분 사고 싶다(구매)</td></tr>
+  <tr><td>순위의 기준(업계 설명)</td><td>내용의 충실성, 신뢰도, 링크</td><td>검색어와의 관련성 + 판매 성과(전환율, 최근 판매 속도), 가격 경쟁력</td></tr>
+  <tr><td>누가 이기나</td><td>도움이 되는 페이지</td><td>더 잘 팔리는 상품</td></tr>
+</table>
+
+<div class="box2">
+  <h3>짚고 넘어갈 점</h3>
+  아마존은 검색 순위 알고리즘(흔히 A9, A10으로 불린다)의 세부 기준을 공식적으로 공개하지 않는다. 위의 ‘판매 성과가 순위에 영향을 준다’는 설명은 셀러 업계와 분석 업체들의 설명이다. 다만 아마존의 검색 목표가 <strong>구매로 이어지는 것</strong>이라는 점에는 이견이 거의 없다.
+</div>
+
+<p>이 차이가 중요한 이유는 간단하다. 구글에서는 “좋은 글”을 쓰면 노출된다. 아마존에서는 “잘 팔리는 상품”이 노출된다. 노출이 판매를 만들고 판매가 다시 노출을 만든다. <strong>순환 구조</strong>다.</p>
+
+<h2><span class="n">02</span>아마존의 검색창은 데이터베이스 조회에 가깝다</h2>
+
+<p>그렇다면 아마존은 무엇을 검색하는가? 웹 문서가 아니라 <strong>정리된 상품 정보의 표</strong>다. 데이터베이스를 떠올리면 쉽다. 한 줄이 상품 하나이고, 열에는 제목, 브랜드, 색상, 크기, 재질, 카테고리, 가격, 재고 같은 <strong>속성</strong>이 들어 있다.</p>
+
+<div class="box2">
+  <h3>도서관 카드 목록함을 떠올려 보자</h3>
+  책을 찾으려면 먼저 책이 <strong>목록 카드로 등록</strong>되어 있어야 한다. 아무리 좋은 책이어도 카드에 저자, 제목, 분류가 적혀 있지 않으면 찾을 수 없다. 아마존의 상품 등록이 이와 같다. 속성이 비어 있으면 필터(색상, 크기, 브랜드)에서 빠져 검색 결과에 나오지 않을 수 있다.
+</div>
+
+<p>그래서 셀러에게 상품 등록은 글쓰기가 아니라 <strong>데이터 입력</strong>에 가깝다. 제목, 불릿 포인트, 설명, 검색어 항목, 카테고리, 속성값. 어느 칸에 무엇을 넣느냐가 곧 ‘검색되느냐’를 결정한다.</p>
+
+<h2><span class="n">03</span>정해진 칸, 정해진 규격</h2>
+
+<p>그러면 그 칸은 누가 정할까? 아마존이다. 몇 가지 예를 보자. (아래 내용은 아마존 정책을 다룬 2차 자료와 보도를 바탕으로 하며, 정책은 바뀌므로 셀러 센트럴에서 직접 확인해야 한다.)</p>
+
+<ul class="tl wide">
+  <li><b>메인 이미지</b>순수한 흰 배경(RGB 255), 상품이 화면을 가득 채워야 하고, 글자·로고·테두리·워터마크는 불가</li>
+  <li><b>제목</b>전부 대문자 금지, 홍보 문구 금지. 2025년 1월부터 200자 기준이었는데 <strong>2026년 7월 27일부터 75자</strong>(미디어 제외)로 줄었다는 보도가 있다</li>
+  <li><b>길어진 제목</b>75자를 넘으면 아마존의 AI가 제목을 대신 고쳐 쓴다. 브랜드 등록 셀러에게는 14일 검토 기간이 주어진다</li>
+  <li><b>새 칸</b>‘아이템 하이라이트(Item Highlights)’ 125자. 재질, 용도 같은 보충 정보를 넣는 검색 가능한 항목</li>
+</ul>
+
+<p>아마존이 밝힌 이유는 “모바일에서 제목이 끝까지 보이게 하고, 다른 온라인 쇼핑몰의 글자 수 기준과 맞추려는 것”이라고 한다. 이 변화에서 눈여겨볼 점은 <strong>셀러가 쓴 글을 아마존이 AI로 다시 쓴다</strong>는 것이다. 셀러의 문장은 더 이상 셀러의 것이 아니다.</p>
+
+<h2><span class="n">04</span>상세 페이지는 누구의 것인가</h2>
+
+<p>규격화보다 더 근본적인 구조가 있다. 아마존에서는 <strong>상세 페이지가 셀러의 것이 아니라 상품(ASIN)의 것</strong>이다. 같은 상품을 파는 셀러가 여럿이면 모두 하나의 페이지에 올라간다. 셀러가 소유하는 것은 페이지가 아니라 <em>자기 제안(offer)</em>, 곧 가격과 배송 조건이다.</p>
+
+<p>그리고 그 페이지에서 <strong>구매 버튼(Buy Box, 현재는 ‘추천 오퍼’라고도 한다)</strong>을 누가 차지할지는 아마존이 정한다. 가격, 배송 방식, 셀러의 성과 지표, 재고 같은 것들을 본다.</p>
+
+<div class="video">
+  <div class="box"><iframe src="https://www.youtube.com/embed/MGU09NLGzUM" title="Featured Offer eligibility and strategies - Amazon Seller University" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+  <p>영상: Featured Offer eligibility and strategies, Amazon Seller University. 아마존이 직접 설명하는 추천 오퍼(Buy Box) 이야기다.</p>
+</div>
+
+<p>이제 질문이 분명해진다. 같은 상품, 같은 페이지, 같은 사진과 같은 설명이라면 소비자는 무엇으로 고를까? <strong>가격과 배송 속도</strong>다. 셀러의 차별화 수단은 점점 줄어들고, 경쟁은 가격으로 모인다.</p>
+
+<h2><span class="n">05</span>왜 이렇게 설계했을까</h2>
+
+<p>그렇다면 아마존은 왜 이런 구조를 만들었을까? 크게 다섯 가지로 읽을 수 있다. (이 부분은 사실 확인이 아니라 <strong>제 해석</strong>이다.)</p>
+
+<table>
+  <tr><th>이유</th><th>설명</th><th>누구에게 이익인가</th></tr>
+  <tr><td>① 검색 비용 절감</td><td>수억 개 상품에서 원하는 것을 찾으려면 형식이 같아야 한다</td><td>소비자, 아마존</td></tr>
+  <tr><td>② 비교 가능성</td><td>같은 칸, 같은 단위로 보이면 쉽게 견줄 수 있다</td><td>소비자</td></tr>
+  <tr><td>③ 기계가 읽는 데이터</td><td>필터, 순위, 추천, AI 요약은 정리된 속성이 있어야 작동한다</td><td>아마존</td></tr>
+  <tr><td>④ 품질과 신뢰 관리</td><td>과장과 거짓을 막고 일정한 수준을 유지한다</td><td>소비자, 아마존</td></tr>
+  <tr><td>⑤ 규모의 운영</td><td>수백만 셀러를 사람이 일일이 관리할 수 없다</td><td>아마존</td></tr>
+</table>
+
+<p>표준 규격의 컨테이너가 항만의 물류를 바꿨듯, 표준 규격의 상품 정보가 상거래의 마찰을 크게 줄인 것은 사실이다. 소비자 입장에서는 편리하다.</p>
+
+<figure class="img">
+  <img src="../assets/amazonway/container-ship.jpg" alt="함부르크 항의 대형 컨테이너선">
+  <figcaption>표준화는 물류를 바꿨다. 컨테이너선(함부르크 항) · 사진: Glyn Lowe (CC BY 2.0)</figcaption>
+</figure>
+
+<p>그러나 ‘누구에게 이익인가’ 열을 다시 보자. ③과 ⑤는 <strong>아마존의 이익</strong>이다. 표준화는 소비자의 비교 비용을 줄이는 동시에, 셀러를 서로 바꿔 끼울 수 있는 부품으로 만든다. 이것이 경제학에서 말하는 <strong>상품화(commoditization)</strong>다. 상품이 같아 보이면 가격으로만 경쟁하게 되고, 그만큼 플랫폼의 협상력이 커진다.</p>
+
+<div class="pull">표준화는 소비자에게는 편리함이고, 셀러에게는 교체 가능성이며, 플랫폼에게는 힘이다.</div>
+
+<h2><span class="n">06</span>웨지우드가 아마존에 입점한다면</h2>
+
+<p><a href="wedgwood.html">웨지우드</a>를 떠올려 보자. 그는 같은 크림색 도기에 ‘여왕의 도자기’라는 이야기를 입혀 값을 올렸다. 아마존에서도 그럴 수 있을까?</p>
+
+<p>메인 이미지는 흰 배경에 제품 하나. 제목은 75자 안쪽, 홍보 문구 없이. 여왕의 이야기를 쓸 칸은 어디에 있는가? 이야기는 규격의 틈새에서만 숨 쉴 수 있다. 그 틈새가 어디이고 얼마나 좁은지는 <strong>2편</strong>에서 이어 본다.</p>
+
+<div class="box2 q">
+  <h3>생각해 볼 질문</h3>
+  <ol>
+    <li>검색 결과가 “더 잘 팔리는 상품” 순서라면, 신제품은 어떻게 노출을 얻을 수 있을까? 이 구조는 누구에게 유리한가?</li>
+    <li>상세 페이지가 상품의 것이고 셀러의 것이 아니라면, 브랜드는 어떤 위험에 노출되는가?</li>
+    <li>소비자는 표준화로 이익을 본다. 그렇다면 셀러의 손실은 소비자의 이익으로 상쇄되는가?</li>
+    <li>셀러가 쓴 제목을 플랫폼의 AI가 다시 써 준다면, 그 글은 누구의 목소리인가?</li>
+    <li>아마존이 아니라 내가 직접 쇼핑몰을 연다면, 무엇을 표준화하고 무엇을 차별화할 것인가?</li>
+  </ol>
+</div>
+
+<div class="box2">
+  <h3>이 글을 쓰며 확인한 것과 확인하지 못한 것</h3>
+  <ul>
+    <li><strong>확인</strong>: 아마존 검색이 아마존 안의 상품만 대상으로 하고 구매 전환을 목표로 한다는 점, 한 ASIN의 상세 페이지를 여러 셀러가 공유하고 Buy Box로 경쟁한다는 점, 2026년 7월 27일부터의 75자 제목 제한 보도.</li>
+    <li><strong>확인하지 못함</strong>: 아마존 공식 정책 페이지는 로그인 후에만 볼 수 있어 원문을 직접 읽지 못했고, 2차 자료와 보도에 의존했다. 순위 알고리즘의 구체적 가중치는 비공개다.</li>
+  </ul>
+</div>
+
+<h2><span class="n">참고</span>출처와 이미지</h2>
+<ul class="src">
+  <li>PPC Land, “Amazon cuts product title limit to 75 characters on July 27” (2026.6.13)</li>
+  <li>Salsify, “Amazon A9 vs A10”; Sellersprite, “How Amazon Keyword Ranking Works”; Wordtracker, “Amazon vs Google: understanding the buyer’s search engine” 등 셀러 업계 분석(공식 문서 아님)</li>
+  <li>Amazon Seller Central 도움말 “Product detail page rules”, “Get to Know the Product Detail Page”(로그인 필요)</li>
+  <li>이미지: Wikimedia Commons. 카드 목록함(MarkBuckawicki, CC0), 컨테이너선(Glyn Lowe, CC BY 2.0)</li>
+  <li>영상: Amazon Seller University (YouTube 임베드)</li>
+</ul>
+</article>
+
+<div class="back"><a href="../index.html#notes">← Random Walk로 돌아가기</a></div>
+<footer>© Jake Sang-Uk Jung</footer>
+<script>
+const bar=document.getElementById('bar');
+addEventListener('scroll',()=>{const h=document.documentElement;bar.style.transform='scaleX('+(h.scrollTop/(h.scrollHeight-h.clientHeight))+')'},{passive:true});
+</script>
+</body>
+</html>
