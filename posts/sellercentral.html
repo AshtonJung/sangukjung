@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>셀러 센트럴을 열면 보이는 것들 · Random Walk · Jake Sang-Uk Jung</title>
+<meta name="description" content="아마존 셀러 센트럴은 판매 툴이 아니라 시장 참여자를 설계하고 관리하는 플랫폼 마케팅 교과서다. 선택 설계, 광고, 리뷰, KPI로 읽는 아마존.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="셀러 센트럴을 열면 보이는 것들: 아마존이 시장을 설계하는 방식">
+<meta property="og:description" content="아마존 셀러 센트럴로 읽는 플랫폼 경제.">
+<meta property="og:image" content="https://ashtonjung.github.io/sangukjung/assets/sellercentral/fulfillment-center.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1730;--navy2:#12224a;--ivory:#f6f1e7;--paper:#fbf8f1;--blue:#1e9be0;--gold:#b8975a;--ink:#16213b;--mute:#6c7690}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Apple SD Gothic Neo','Noto Sans KR',sans-serif;background:var(--paper);color:var(--ink);line-height:1.85;-webkit-font-smoothing:antialiased;font-size:17px}
+a{color:var(--blue)}
+.bar{position:fixed;top:0;left:0;right:0;height:3px;background:var(--blue);transform-origin:0 50%;transform:scaleX(0);z-index:99}
+nav{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;padding:20px 5vw;color:#fff;z-index:5;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+nav a{color:#fff;text-decoration:none;opacity:.85}nav a:hover{opacity:1}
+nav .logo{font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.04em;text-transform:none}
+nav .logo b{color:var(--blue)}
+.hero{background:radial-gradient(1000px 600px at 75% 40%,#1c3a78 0%,var(--navy) 62%);color:#fff;padding:150px 6vw 90px;display:grid;grid-template-columns:1.2fr .8fr;gap:5vw;align-items:center}
+.hero .eyebrow{font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font-family:'Noto Serif KR','Cormorant Garamond',serif;font-weight:700;font-size:clamp(34px,5vw,64px);line-height:1.2;margin:18px 0 18px}
+.hero p{color:#d6dcec;font-size:clamp(16px,1.5vw,20px);font-weight:300;max-width:34em}
+.hero .meta{margin-top:22px;font-size:12px;color:#9fb0d6;letter-spacing:.08em}
+.hero figure{justify-self:center;width:min(360px,70vw)}
+.hero figure img{width:100%;border-radius:200px 200px 6px 6px;border:1px solid #ffffff44;box-shadow:0 40px 90px #000a;display:block;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%}
+.hero figcaption{font-size:11px;color:#9fb0d6;margin-top:10px;text-align:center}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.hero figure{order:-1;width:min(240px,60vw)}}
+article{max-width:760px;margin:0 auto;padding:70px 6vw 40px}
+article p{margin-bottom:1.15em}
+article h2{font-family:'Noto Serif KR','Cormorant Garamond',serif;font-weight:700;font-size:clamp(24px,3vw,32px);line-height:1.3;margin:2.4em 0 .7em;padding-top:.4em;border-top:1px solid #e6dfcf}
+article h2 .n{display:block;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.2em;color:var(--gold);font-weight:500;margin-bottom:6px}
+article strong{color:var(--navy)}
+.lead{font-size:20px;color:var(--ink);font-weight:400}
+.term{display:inline-block;background:#e9f4fc;color:#0d6aa3;font-size:.82em;padding:1px 9px;border-radius:20px;margin:0 2px;white-space:nowrap}
+.pull{margin:1.6em 0;padding:22px 26px;background:var(--navy);color:#fff;border-left:4px solid var(--blue);font-family:'Noto Serif KR',serif;font-size:19px;line-height:1.7}
+figure.img{margin:2em -4vw}
+figure.img img{width:100%;display:block;border-radius:4px;box-shadow:0 20px 50px #0b173030;max-height:560px;object-fit:contain;background:#efe9da}
+figure.img.tall img{max-width:420px;margin:0 auto}
+figure.img figcaption{font-size:13px;color:var(--mute);margin-top:10px;line-height:1.5;text-align:center}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:2em -4vw}
+.two figure{margin:0}.two img{width:100%;height:340px;object-fit:contain;background:#efe9da;border-radius:4px;display:block;box-shadow:0 20px 50px #0b173030}
+.two figcaption{font-size:13px;color:var(--mute);margin-top:8px;line-height:1.5;text-align:center}
+@media(max-width:700px){.two{grid-template-columns:1fr;margin:2em 0}figure.img{margin:2em 0}}
+.video{margin:2.2em -4vw}
+.video .box{position:relative;padding-top:56.25%;background:#000;border-radius:6px;overflow:hidden;box-shadow:0 20px 50px #0b173040}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video p{font-size:13px;color:var(--mute);margin-top:10px;text-align:center}
+@media(max-width:700px){.video{margin:2em 0}}
+table{width:100%;border-collapse:collapse;margin:1.6em 0;font-size:15px;background:#fff;border:1px solid #e6dfcf}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid #eee7d6}
+th{background:var(--navy);color:#fff;font-weight:500;font-size:13px;letter-spacing:.05em}
+td:first-child{font-weight:600;color:var(--navy);white-space:nowrap}
+.tl{list-style:none;margin:1.6em 0;padding-left:26px;border-left:1px solid #d8cfba}
+.tl li{position:relative;padding:0 0 18px 6px;font-size:15.5px;line-height:1.6}
+.tl li::before{content:'';position:absolute;left:-33px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--paper);border:2px solid var(--blue)}
+.tl b{font-family:'JetBrains Mono',monospace;color:var(--blue);font-size:13px;margin-right:8px}
+.box2{background:var(--ivory);border:1px solid #e6dfcf;border-radius:6px;padding:24px 28px;margin:2em 0;font-size:15.5px}
+.box2 h3{font-family:'Noto Serif KR',serif;font-size:19px;margin-bottom:10px;color:var(--navy)}
+.box2 li{margin:6px 0 6px 18px}
+.box2.q{background:var(--navy);color:#e8ecf7;border:none}.box2.q h3{color:#fff}
+.src{font-size:13.5px;color:var(--mute);line-height:1.7}
+.src li{margin:4px 0 4px 18px}
+.back{max-width:760px;margin:0 auto;padding:10px 6vw 90px}
+.back a{display:inline-block;padding:13px 26px;border:1px solid var(--navy);text-decoration:none;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);transition:.25s}
+.back a:hover{background:var(--navy);color:#fff}
+footer{background:var(--navy);color:#9fb0d6;text-align:center;padding:40px 6vw;font-size:12px}
+.hero figure.wide{width:min(480px,86vw)}.hero figure.wide img{border-radius:8px;aspect-ratio:2/1;object-fit:cover;object-position:50% 50%}
+.tl.wide li b{display:inline-block;min-width:52px}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+<nav><a class="logo" href="../index.html">Jake Sang-Uk <b>Jung</b></a><a href="../index.html#notes">← Random Walk</a></nav>
+
+<header class="hero">
+  <div>
+    <div class="eyebrow">Random Walk · Platform Marketing</div>
+    <h1>셀러 센트럴을 열면<br>보이는 것들</h1>
+    <p>아마존이 시장을 설계하는 방식</p>
+    <div class="meta">정상욱 · 한국외국어대학교 마케팅 · 읽는 시간 약 9분</div>
+  </div>
+  <figure class="wide">
+    <img src="../assets/sellercentral/fulfillment-center.jpg" alt="아마존 풀필먼트 센터 외관">
+    <figcaption>미국 플로리다 오칼라의 아마존 풀필먼트 센터 · 사진: Michael Rivera (CC0)</figcaption>
+  </figure>
+</header>
+
+<article>
+<p class="lead">아마존 셀러 센트럴에 처음 들어가면 대부분 이렇게 느낀다. <strong>“판매만 하면 되는 줄 알았는데, 이건 거의 하나의 운영체제(OS) 아닌가?”</strong></p>
+
+<p>상품 등록, 광고, 물류, 가격, 리뷰, 고객 응대, 규정, 리포트까지 모두 한 화면 안에 있다. all in one이다. 편리하다. 그런데 이상하다. 왜 이렇게 편리하게 만들어 놓았을까?</p>
+
+<p>아마존은 단순히 ‘마켓플레이스’를 빌려주는 회사가 아니다. 셀러의 행동이 <strong>설계된 방식으로 흘러가도록 만든 플랫폼</strong>을 운영한다. 선택권이 있는 것처럼 보이지만, 사실상 정해진 길로 가게 만드는 구조다. 이 글은 셀러 센트럴 화면을 하나씩 열면서 그 구조를 마케팅의 눈으로 읽어 본다.</p>
+
+<div class="box2">
+  <h3>이 글에서 확인할 개념</h3>
+  <span class="term">선택 설계(Choice Architecture)</span><span class="term">플랫폼 경제</span><span class="term">양면시장</span><span class="term">검색 광고</span><span class="term">고객 데이터 소유</span><span class="term">KPI와 통제</span><span class="term">GMV</span><span class="term">브랜드 자산</span>
+</div>
+
+<h2><span class="n">01</span>FBA냐 FBM이냐: 강요하지 않는 강요</h2>
+
+<p>상품을 등록하는 순간부터 셀러는 선택을 해야 한다. <strong>FBA(Fulfillment by Amazon)를 쓸 것인가, FBM(Fulfilled by Merchant)으로 직접 보낼 것인가.</strong></p>
+
+<p>겉으로는 단순한 물류 옵션이다. 그런데 이 선택은 프라임 배지, 구매 버튼(Buy Box) 경쟁력, 전환율 같은 것들을 갈라놓는 갈림길이다. 아마존은 FBA를 “강제”하지 않는다. 대신 쓰지 않았을 때의 불이익이 너무나 선명하게 보이게 만든다.</p>
+
+<div class="two">
+  <figure><img src="../assets/sellercentral/thaler.jpg" alt="리처드 탈러 초상"><figcaption>리처드 탈러(Richard Thaler). 『Nudge』(2008)로 선택 설계를 대중에게 알렸다 · Chatham House (CC BY 2.0)</figcaption></figure>
+  <div style="align-self:center;font-size:16px;line-height:1.8">
+    <p><strong>선택 설계(Choice Architecture)</strong>란 같은 선택지를 어떻게 보여 주느냐가 결정에 영향을 준다는 개념이다. 탈러와 선스타인이 『Nudge』에서 퍼뜨렸다.</p>
+    <p>선택지를 막지는 않지만, 어떤 길이 ‘기본값’으로 보이게 만든다. FBA가 바로 그런 기본값처럼 작동한다.</p>
+  </div>
+</div>
+
+<p>물론 FBA에는 실제 가치도 있다. 보관, 포장, 배송, 반품 처리, 고객 응대를 아마존 물류망에 맡길 수 있다. 문제는 그 편익이 <strong>플랫폼의 이익과 셀러의 이익이 겹치는 곳</strong>에서만 나온다는 점이다. 이 구조는 규제 기관의 관심도 받았다. 2023년 미국 연방거래위원회(FTC)와 주 정부들은 아마존이 프라임 자격을 이용해 셀러를 특정 방식으로 몰아간다고 주장하며 소송을 냈다. 아직 하나의 주장일 뿐이지만, 이 구조가 얼마나 논쟁적인지 보여 준다.</p>
+
+<div class="video">
+  <div class="box"><iframe src="https://www.youtube.com/embed/C8cFKezcdDw" title="Intro to Fulfillment by Amazon (FBA) - Amazon Seller University" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+  <p>영상: Intro to Fulfillment by Amazon (FBA), Amazon Seller University. 아마존이 직접 설명하는 FBA다. 아마존의 관점이 어떤 단어로 표현되는지 눈여겨보자.</p>
+</div>
+
+<h2><span class="n">02</span>광고: 이미 있는 수요를 누가 가져가느냐</h2>
+
+<p>셀러 센트럴 안의 Amazon Ads는 구글이나 메타 광고와 느낌이 다르다. 새로운 수요를 일으켜 브랜드를 키우는 도구라기보다, <strong>이미 발생한 수요를 누가 가져가느냐의 싸움</strong>에 가깝다.</p>
+
+<ul class="src" style="font-size:16px;color:var(--ink)">
+  <li><strong>Sponsored Products</strong>: 검색 결과에서 경쟁자를 밀어내기 위한 비용</li>
+  <li><strong>Sponsored Brands</strong>: 브랜드를 보여 주는 것처럼 보이지만 실제로는 검색 결과 화면의 좋은 자리, 곧 <em>search real estate</em>를 사는 행위</li>
+</ul>
+
+<p>아마존은 광고를 “선택 사항”으로 남겨 둔다. 그런데 광고를 끄는 순간 체감되는 매출 하락이 광고를 사실상 필수 비용으로 만든다. 셀러가 서로 가격으로 싸우던 경쟁이 <strong>광고 입찰 경쟁</strong>으로 옮겨 가는 것이다.</p>
+
+<p>FTC 소송의 주장 중에도 검색 결과의 자연 노출 자리를 광고가 대신하고 있다는 내용이 있다. 이것도 어디까지나 소송에서의 주장이다. 다만 “검색 결과 화면은 한정되어 있고, 그 자리에는 값이 붙는다”는 구조 자체는 셀러라면 누구나 체감한다.</p>
+
+<h2><span class="n">03</span>리뷰: 고객은 아마존의 고객이다</h2>
+
+<p>리뷰 시스템은 더 노골적이다. 셀러 센트럴에는 ‘리뷰를 잘 관리하라’는 메시지가 곳곳에 있다. 하지만 셀러가 리뷰에 개입할 수 있는 수단은 극도로 제한되어 있다. <strong>정해진 버튼, 정해진 문구, 정해진 타이밍.</strong></p>
+
+<p>왜일까? 아마존은 리뷰를 <strong>고객의 자산</strong>으로 정의하고, 셀러에게는 접근만 허용한다. 리뷰의 신뢰성이 곧 아마존이라는 브랜드의 신뢰성이기 때문이다. 아마존이 직접 운영하는 리뷰 프로그램(Vine)도 있다. 업체가 비용을 내고 제품을 제공하면 아마존이 선정한 리뷰어가 리뷰를 쓰는 방식인데, 리뷰를 모으는 길 자체를 아마존이 통제한다는 점을 보여 준다.</p>
+
+<div class="pull">이 구조 덕분에 셀러는 “고객을 내 고객으로 만들 수 없는 장사”를 하게 된다.</div>
+
+<p>앞서 읽은 <a href="wunderman.html">운더맨의 글</a>을 떠올려 보자. 다이렉트 마케팅은 고객의 반응을 기록하고 그 사람과 관계를 쌓는 일이었다. 그런데 아마존에서는 고객의 이름도, 이메일도, 구매 이력도 셀러가 가질 수 없다. 다이렉트 마케팅의 전제가 통째로 막혀 있는 셈이다.</p>
+
+<h2><span class="n">04</span>대시보드: 숫자가 곧 생존이다</h2>
+
+<p>셀러 센트럴은 항상 숫자를 보여 준다. <strong>Order Defect Rate(주문 결함률), Late Shipment Rate(배송 지연율), Buy Box Percentage(구매 버튼 점유율).</strong></p>
+
+<p>문제는 이 숫자들이 단순한 참고 지표가 아니라는 점이다. 이것들은 셀러의 <strong>생존을 좌우하는 KPI</strong>다. 아마존은 셀러에게 ‘독립 사업자’라는 지위를 주면서도, 플랫폼의 기준을 벗어나는 순간 노출 제한이나 계정 위험으로 연결시킨다. 전통적인 유통에서는 보기 어려운 <strong>플랫폼형 통제</strong>다. (구체적인 기준 수치는 바뀔 수 있으니 셀러 센트럴의 계정 상태 화면에서 직접 확인하자.)</p>
+
+<h2><span class="n">05</span>성장을 말하지만, 누구의 성장일까</h2>
+
+<p>셀러 센트럴은 끊임없이 성장을 말한다. “광고를 늘려라.” “FBA를 확대하라.” “가격을 경쟁력 있게 조정하라.”</p>
+
+<p>그런데 그 성장의 방향은 언제나 아마존의 <strong>GMV(Gross Merchandise Value, 일정 기간 플랫폼에서 거래된 총 상품 거래액)</strong>와 고객 경험을 최적화하는 쪽이다. 셀러의 브랜드 자산이 쌓이는지는 부차적인 문제다. 그래서 아마존에서 오래 장사한 셀러일수록 이렇게 말한다. <strong>“매출은 큰데 브랜드는 남지 않는다.”</strong></p>
+
+<table>
+  <tr><th>셀러 센트럴 화면</th><th>셀러가 보는 것</th><th>플랫폼의 설계</th><th>개념</th></tr>
+  <tr><td>FBA / FBM</td><td>물류 옵션</td><td>프라임, Buy Box로 이어지는 기본값</td><td>선택 설계</td></tr>
+  <tr><td>Amazon Ads</td><td>브랜드 성장 도구</td><td>한정된 검색 자리에 값을 매김</td><td>검색 광고, 희소 자원 경매</td></tr>
+  <tr><td>리뷰</td><td>내 제품의 평판</td><td>고객 자산으로 정의, 접근만 허용</td><td>고객 데이터 소유</td></tr>
+  <tr><td>계정 상태 지표</td><td>성과 점검 숫자</td><td>기준을 벗어나면 노출 제한</td><td>KPI와 통제</td></tr>
+  <tr><td>성장 권유</td><td>사업 확대의 기회</td><td>GMV와 고객 경험의 극대화</td><td>플랫폼 이익 정렬</td></tr>
+</table>
+
+<h2><span class="n">06</span>그래도 셀러는 왜 떠나지 못할까</h2>
+
+<p>한쪽 면만 보면 불공평하다. 균형 있게 보자. 아마존 마켓플레이스에서 셀러는 이미 만들어진 거대한 고객 기반에 접근한다. 제3자 판매자가 유료 판매 수량에서 차지하는 비중은 2020년 기준 약 54%였다. 아마존에게도 셀러는 필수다. 셀러가 올리는 다양한 상품이 곧 아마존의 품목 구색이기 때문이다.</p>
+
+<p>그래서 이것은 <strong>양면시장(two-sided market)</strong>이다. 한쪽(고객)이 많을수록 다른 쪽(셀러)이 몰리고, 셀러가 많을수록 고객은 더 많은 선택지를 얻는다. 플랫폼은 양쪽을 모두 잡아야 한다. 그러나 <strong>고객이 모인 곳으로 셀러가 갈 수밖에 없다</strong>는 점에서 힘은 한쪽으로 기운다. 규칙을 정하는 쪽이 이익도 더 챙기기 쉽다.</p>
+
+<h2><span class="n">07</span>셀러 센트럴은 플랫폼 마케팅의 교과서다</h2>
+
+<p>결국 셀러 센트럴은 판매 툴이 아니다. 아마존이 시장 참여자를 설계하고 관리하는 <strong>‘플랫폼 마케팅 교과서’</strong>에 가깝다. 셀러는 고객을 상대한다고 생각하지만, 실제로는 먼저 아마존을 상대한다. 아마존을 이해하지 못하면 제품도, 가격도, 마케팅도 제대로 작동하지 않는다.</p>
+
+<div class="pull">아마존 셀러 센트럴을 공부한다는 것은 “온라인 판매를 배운다”는 뜻을 넘어, 플랫폼이 어떻게 시장을 만들고 힘의 균형을 다시 설계하는지 배우는 일이다.</div>
+
+<p>이것은 단순한 이커머스 이야기가 아니다. 우리가 지금 살고 있는 플랫폼 경제 전체를 이해하는 하나의 창이다. 배달 앱, 숙박 앱, 앱스토어에도 같은 질문을 던져 볼 수 있다. 누가 규칙을 정하는가? 누가 고객 데이터를 가지는가? 성장의 이익은 누구에게 돌아가는가?</p>
+
+<div class="box2 q">
+  <h3>생각해 볼 질문</h3>
+  <ol>
+    <li>FBA를 “선택”이라고 부를 수 있을까? 선택과 강요 사이의 경계는 어디에 있는가?</li>
+    <li>검색 결과에서 광고와 자연 노출은 소비자에게 어떻게 구분되어야 할까?</li>
+    <li>고객 데이터를 셀러가 가질 수 없는 구조는 장기적으로 아마존에도 이로울까?</li>
+    <li>배달 앱이나 숙박 앱 중 하나를 골라 이 글의 표(05절)를 다시 그려 보자.</li>
+    <li>내가 아마존 셀러라면, 아마존 밖에서 어떻게 “내 고객”을 만들 수 있을까?</li>
+  </ol>
+</div>
+
+<h2><span class="n">참고</span>출처와 이미지</h2>
+<ul class="src">
+  <li>Richard H. Thaler &amp; Cass R. Sunstein, <em>Nudge</em> (2008)</li>
+  <li>Wikipedia, “Amazon Marketplace”, “Fulfillment by Amazon”, “Amazon Vine”, “FTC v. Amazon”, “Choice architecture”, “Nudge (book)”</li>
+  <li>FTC 등 v. Amazon.com, Inc. (2023년 제기). 이 글에서 인용한 부분은 소송에서의 주장이며 사법적 판단이 아니다.</li>
+  <li>이미지: Wikimedia Commons. 풀필먼트 센터(Michael Rivera, CC0), 리처드 탈러(Chatham House, CC BY 2.0)</li>
+  <li>영상: Amazon Seller University (YouTube 임베드)</li>
+</ul>
+</article>
+
+<div class="back"><a href="../index.html#notes">← Random Walk로 돌아가기</a></div>
+<footer>© Jake Sang-Uk Jung</footer>
+<script>
+const bar=document.getElementById('bar');
+addEventListener('scroll',()=>{const h=document.documentElement;bar.style.transform='scaleX('+(h.scrollTop/(h.scrollHeight-h.clientHeight))+')'},{passive:true});
+</script>
+</body>
+</html>
