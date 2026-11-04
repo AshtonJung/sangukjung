@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>아마존과 월마트, 서로의 땅을 노리다 · Random Walk · Jake Sang-Uk Jung</title>
+<meta name="description" content="가장 큰 오프라인 제국과 가장 큰 온라인 제국. 식료품, 홀푸드 인수, 프라임을 둘러싼 아마존과 월마트의 오랜 전쟁.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="아마존과 월마트, 서로의 땅을 노리다">
+<meta property="og:description" content="아마존 웨이 3편: 홀푸드 인수와 프라임, 식료품 전쟁의 큰 흐름.">
+<meta property="og:image" content="https://ashtonjung.github.io/sangukjung/assets/walmart/walmart-supercenter.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1730;--navy2:#12224a;--ivory:#f6f1e7;--paper:#fbf8f1;--blue:#1e9be0;--gold:#b8975a;--ink:#16213b;--mute:#6c7690}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Apple SD Gothic Neo','Noto Sans KR',sans-serif;background:var(--paper);color:var(--ink);line-height:1.85;-webkit-font-smoothing:antialiased;font-size:17px}
+a{color:var(--blue)}
+.bar{position:fixed;top:0;left:0;right:0;height:3px;background:var(--blue);transform-origin:0 50%;transform:scaleX(0);z-index:99}
+nav{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;padding:20px 5vw;color:#fff;z-index:5;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+nav a{color:#fff;text-decoration:none;opacity:.85}nav a:hover{opacity:1}
+nav .logo{font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.04em;text-transform:none}
+nav .logo b{color:var(--blue)}
+.hero{background:radial-gradient(1000px 600px at 75% 40%,#1c3a78 0%,var(--navy) 62%);color:#fff;padding:150px 6vw 90px;display:grid;grid-template-columns:1.2fr .8fr;gap:5vw;align-items:center}
+.hero .eyebrow{font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font-family:'Noto Serif KR','Cormorant Garamond',serif;font-weight:700;font-size:clamp(34px,5vw,64px);line-height:1.2;margin:18px 0 18px}
+.hero p{color:#d6dcec;font-size:clamp(16px,1.5vw,20px);font-weight:300;max-width:34em}
+.hero .meta{margin-top:22px;font-size:12px;color:#9fb0d6;letter-spacing:.08em}
+.hero figure{justify-self:center;width:min(360px,70vw)}
+.hero figure img{width:100%;border-radius:200px 200px 6px 6px;border:1px solid #ffffff44;box-shadow:0 40px 90px #000a;display:block;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%}
+.hero figcaption{font-size:11px;color:#9fb0d6;margin-top:10px;text-align:center}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.hero figure{order:-1;width:min(240px,60vw)}}
+article{max-width:760px;margin:0 auto;padding:70px 6vw 40px}
+article p{margin-bottom:1.15em}
+article h2{font-family:'Noto Serif KR','Cormorant Garamond',serif;font-weight:700;font-size:clamp(24px,3vw,32px);line-height:1.3;margin:2.4em 0 .7em;padding-top:.4em;border-top:1px solid #e6dfcf}
+article h2 .n{display:block;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.2em;color:var(--gold);font-weight:500;margin-bottom:6px}
+article strong{color:var(--navy)}
+.lead{font-size:20px;color:var(--ink);font-weight:400}
+.term{display:inline-block;background:#e9f4fc;color:#0d6aa3;font-size:.82em;padding:1px 9px;border-radius:20px;margin:0 2px;white-space:nowrap}
+.pull{margin:1.6em 0;padding:22px 26px;background:var(--navy);color:#fff;border-left:4px solid var(--blue);font-family:'Noto Serif KR',serif;font-size:19px;line-height:1.7}
+figure.img{margin:2em -4vw}
+figure.img img{width:100%;display:block;border-radius:4px;box-shadow:0 20px 50px #0b173030;max-height:560px;object-fit:contain;background:#efe9da}
+figure.img.tall img{max-width:420px;margin:0 auto}
+figure.img figcaption{font-size:13px;color:var(--mute);margin-top:10px;line-height:1.5;text-align:center}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:2em -4vw}
+.two figure{margin:0}.two img{width:100%;height:340px;object-fit:contain;background:#efe9da;border-radius:4px;display:block;box-shadow:0 20px 50px #0b173030}
+.two figcaption{font-size:13px;color:var(--mute);margin-top:8px;line-height:1.5;text-align:center}
+@media(max-width:700px){.two{grid-template-columns:1fr;margin:2em 0}figure.img{margin:2em 0}}
+.video{margin:2.2em -4vw}
+.video .box{position:relative;padding-top:56.25%;background:#000;border-radius:6px;overflow:hidden;box-shadow:0 20px 50px #0b173040}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video p{font-size:13px;color:var(--mute);margin-top:10px;text-align:center}
+@media(max-width:700px){.video{margin:2em 0}}
+table{width:100%;border-collapse:collapse;margin:1.6em 0;font-size:15px;background:#fff;border:1px solid #e6dfcf}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid #eee7d6}
+th{background:var(--navy);color:#fff;font-weight:500;font-size:13px;letter-spacing:.05em}
+td:first-child{font-weight:600;color:var(--navy);white-space:nowrap}
+.tl{list-style:none;margin:1.6em 0;padding-left:26px;border-left:1px solid #d8cfba}
+.tl li{position:relative;padding:0 0 18px 6px;font-size:15.5px;line-height:1.6}
+.tl li::before{content:'';position:absolute;left:-33px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--paper);border:2px solid var(--blue)}
+.tl b{font-family:'JetBrains Mono',monospace;color:var(--blue);font-size:13px;margin-right:8px}
+.box2{background:var(--ivory);border:1px solid #e6dfcf;border-radius:6px;padding:24px 28px;margin:2em 0;font-size:15.5px}
+.box2 h3{font-family:'Noto Serif KR',serif;font-size:19px;margin-bottom:10px;color:var(--navy)}
+.box2 li{margin:6px 0 6px 18px}
+.box2.q{background:var(--navy);color:#e8ecf7;border:none}.box2.q h3{color:#fff}
+.src{font-size:13.5px;color:var(--mute);line-height:1.7}
+.src li{margin:4px 0 4px 18px}
+.back{max-width:760px;margin:0 auto;padding:10px 6vw 90px}
+.back a{display:inline-block;padding:13px 26px;border:1px solid var(--navy);text-decoration:none;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);transition:.25s}
+.back a:hover{background:var(--navy);color:#fff}
+footer{background:var(--navy);color:#9fb0d6;text-align:center;padding:40px 6vw;font-size:12px}
+.hero figure.wide{width:min(480px,86vw)}.hero figure.wide img{border-radius:8px;aspect-ratio:2/1;object-fit:cover;object-position:50% 50%}
+.tl.wide li b{display:inline-block;min-width:52px}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+<nav><a class="logo" href="../index.html">Jake Sang-Uk <b>Jung</b></a><a href="../index.html#notes">← Random Walk</a></nav>
+
+<header class="hero">
+  <div>
+    <div class="eyebrow">Random Walk · The Amazon Way 3</div>
+    <h1>아마존과 월마트,<br>서로의 땅을 노리다</h1>
+    <p>가장 큰 오프라인 제국과 가장 큰 온라인 제국의 오랜 전쟁</p>
+    <div class="meta">정상욱 · 한국외국어대학교 마케팅 · 읽는 시간 약 11분</div>
+  </div>
+  <figure class="wide">
+    <img src="../assets/walmart/walmart-supercenter.jpg" alt="월마트 슈퍼센터 외관">
+    <figcaption>미국 플로리다 퀸시의 월마트 슈퍼센터 · 사진: FLGALine1999 (CC0)</figcaption>
+  </figure>
+</header>
+
+<article>
+<p class="lead">지금까지 이 시리즈는 아마존 <em>안</em>에서 일어나는 일을 봤다. 검색과 상품 등록, 표현 규제. 이번에는 시선을 바깥으로 돌려 보자. <strong>아마존은 어디를 향해 나아가고 있고, 누가 그 길을 막고 있을까?</strong></p>
+
+<p>답은 대개 한 이름으로 모인다. <strong>월마트(Walmart)</strong>. 두 회사는 오래전부터 서로의 땅을 조금씩 넘보며 싸워 왔다. 그 싸움의 중심에는 뜻밖에도 <strong>식료품</strong>이 있다. 왜 하필 식료품일까? 이 글은 그 질문에서 출발해 아마존의 큰 전략을 따라간다.</p>
+
+<div class="box2">
+  <h3>이 글에서 확인할 개념</h3>
+  <span class="term">옴니채널</span><span class="term">구매 빈도</span><span class="term">라스트 마일</span><span class="term">멤버십(프라임)</span><span class="term">인수합병</span><span class="term">방어 전략</span><span class="term">락인(lock-in)</span>
+</div>
+
+<h2><span class="n">01</span>두 제국의 출발</h2>
+
+<p><strong>월마트</strong>는 1962년 샘 월턴과 동생 버드 월턴이 미국 아칸소주 로저스에서 연 가게에서 시작했다. 지금은 본사를 아칸소 벤턴빌에 두고 슈퍼센터, 할인점, 식료품점, 약국, 주유소를 운영하며, 직원이 210만 명으로 세계 최대의 민간 고용주다.</p>
+
+<p><strong>아마존</strong>은 1994년 제프 베이조스가 워싱턴주 벨뷰에서 인터넷 서점으로 시작했다. 2005년 2월에는 연회비 79달러에 모든 적격 주문의 2일 무료 배송을 주는 구독 서비스 <strong>프라임</strong>을 시작했다. 위키백과에 따르면 2026년 기준 매출은 아마존이 세계 1위, 월마트가 2위다.</p>
+
+<ul class="tl wide">
+  <li><b>1962</b>월마트, 아칸소주 로저스에서 창업</li>
+  <li><b>1994</b>아마존, 온라인 서점으로 출발</li>
+  <li><b>2005</b>아마존 프라임 시작(연 79달러)</li>
+  <li><b>2016</b>월마트, 온라인 쇼핑몰 Jet.com을 33억 달러에 인수</li>
+  <li><b>2017</b>아마존, 홀푸드마켓을 137억 달러에 인수(8월 28일 완료)</li>
+  <li><b>2026</b>아마존, Go·Fresh 매장 폐점 발표, 월마트는 3시간 이내 배송망으로 맞서는 중</li>
+</ul>
+
+<h2><span class="n">02</span>서로 가진 것, 서로 없는 것</h2>
+
+<table>
+  <tr><th></th><th>월마트</th><th>아마존</th></tr>
+  <tr><td>출발점</td><td>오프라인 매장</td><td>온라인 쇼핑</td></tr>
+  <tr><td>강한 것</td><td>전국 매장망, 가격 이미지, 식료품 구매 습관</td><td>온라인 플랫폼, 프라임 회원, 물류·배송, 마켓플레이스</td></tr>
+  <tr><td>약한 것</td><td>온라인 기술과 데이터(상대적으로)</td><td>식료품, 신선식품, 오프라인 접점</td></tr>
+  <tr><td>목표</td><td>매장을 온라인 배송 거점으로 활용</td><td>온라인 물류망을 매장과 신선식품으로 확장</td></tr>
+</table>
+
+<p>표를 보면 숨은 구조가 보인다. 한쪽의 <strong>강점이 다른 쪽의 약점</strong>이다. 그래서 두 회사는 자기에게 없는 것을 얻으려고 서로의 땅으로 들어간다. 월마트는 온라인으로, 아마존은 매장과 식료품으로.</p>
+
+<h2><span class="n">03</span>식료품은 왜 전장이 되었나</h2>
+
+<p>아마존이 오래 팔아 온 책, 전자제품, 생활용품은 필요할 때 가끔 사는 물건이다. 반면 식료품은 <strong>일주일에도 몇 번씩</strong> 사는 가장 빈도 높은 소비다. 이 차이가 전략의 핵심이다. (이 절은 사실 정리가 아니라 제 해석이다.)</p>
+
+<ul class="src" style="font-size:16px;color:var(--ink)">
+  <li><strong>습관</strong>: 매일 쓰는 앱과 매장이 곧 ‘기본 선택지’가 된다. 식료품을 사는 곳이 다른 것도 같이 사게 된다.</li>
+  <li><strong>구독과의 결합</strong>: 자주 쓰는 서비스일수록 멤버십의 가치가 크다.</li>
+  <li><strong>데이터</strong>: 자주 사는 것은 그만큼 고객의 일상 데이터가 쌓인다는 뜻이다.</li>
+</ul>
+
+<p>그런데 식료품은 아마존의 약점이었다. 한 분석에 따르면 미국 식료품 시장에서 아마존의 점유율은 한 자릿수에 그치고, 월마트는 20%를 훌쩍 넘는다. 온라인 전체 시장에서는 아마존이 압도적으로 앞서는데도 그렇다. (수치는 출처마다 기준이 달라 편차가 크다.) 아마존에게 식료품은 <strong>가장 큰 빈칸</strong>이었다.</p>
+
+<h2><span class="n">04</span>2017년, 홀푸드를 사다</h2>
+
+<p>2017년 6월 아마존은 홀푸드마켓을 <strong>137억 달러</strong>에 사겠다고 발표했다. 아마존 역사상 가장 큰 인수였다. 홀푸드는 1980년 존 매키가 세운 유기농 식료품 체인으로, 당시 매장이 약 450개였다. 발표 직후 월마트 주가는 4.7%, 코스트코는 6%, 크로거는 11.6% 하락했다. 시장이 이 인수를 얼마나 큰 사건으로 받아들였는지 보여 준다.</p>
+
+<p>아마존은 왜 샀을까? 네 가지로 읽을 수 있다. (역시 제 해석이다.)</p>
+
+<table>
+  <tr><th>이유</th><th>설명</th></tr>
+  <tr><td>① 오프라인 거점</td><td>식료품을 다루는 실제 매장과 공급망을 단번에 확보</td></tr>
+  <tr><td>② 신선·저온 물류의 노하우</td><td>상하기 쉬운 물건을 다루는 운영 능력은 온라인에서만 쌓기 어렵다</td></tr>
+  <tr><td>③ 프라임과의 연결</td><td>인수 후 프라임 회원이 온라인으로 주문하고 매장에서 무료로 받는 서비스를 계획했다</td></tr>
+  <tr><td>④ 월마트 견제</td><td>월마트가 온라인으로 올라오는 속도에 대한 방어. 한 분석은 이를 ‘방어 전략’이라고 불렀다</td></tr>
+</table>
+
+<div class="video">
+  <div class="box"><iframe src="https://www.youtube.com/embed/vx_XGfGB2VE" title="Amazon vs. Walmart: How the Giants Look to Each Other to Best Each Other - WSJ" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+  <p>영상: Amazon vs. Walmart, The Wall Street Journal. 두 회사가 서로를 어떻게 보는지 다룬다.</p>
+</div>
+
+<h2><span class="n">05</span>월마트의 반격: 매장이 곧 물류센터</h2>
+
+<p>월마트도 가만히 있지 않았다. 2016년 온라인 쇼핑몰 Jet.com을 33억 달러에 사서 창업자 마크 로어에게 전자상거래를 맡겼다. 그리고 월마트의 가장 큰 자산, <strong>전국에 퍼진 매장</strong>을 배송 거점으로 바꿨다. 주문을 받으면 가까운 매장에서 포장해 보내거나 차 안으로 건네주는 방식이다.</p>
+
+<p>한 분석에 따르면 월마트는 미국 가구의 약 93%에 3시간 안에 닿는 배송망을 갖췄고, 구독 서비스 월마트+의 멤버십 수입도 늘고 있다. 2026년의 한 보도에서는 월마트의 온라인 판매 증가율이 아마존을 앞선다고 전한다. 이미 매장이 있는 쪽이 <strong>온라인으로 확장하는 비용이 낮다</strong>는 점을 활용한 것이다.</p>
+
+<h2><span class="n">06</span>프라임이라는 연결고리</h2>
+
+<p>아마존의 모든 움직임을 묶는 끈은 <strong>프라임</strong>이다. 2005년 연 79달러였던 프라임은 2022년 연 139달러까지 올랐다. 그런데도 사람들이 계속 가입하는 이유는 배송뿐 아니라 영상, 음악 등 혜택이 계속 늘어났기 때문이다. 그리고 지금 그 목록에 <strong>식료품 당일 배송</strong>이 들어왔다. 프라임 회원은 25달러 이상 주문하면 당일 신선식품 배송이 무료이고, 비회원은 12.99달러를 낸다고 아마존은 밝혔다.</p>
+
+<p>앞서 본 <a href="wunderman.html">운더맨의 글</a>을 떠올려 보자. 그는 쓸수록 더 큰 혜택을 주어 고객을 묶어 두는 <strong>로열티 프로그램</strong>을 설계했다. 프라임은 그 아이디어가 가장 크게 자란 모습이다. 배송이 빨라질수록, 식료품까지 들어올수록 고객은 아마존을 떠나기 어려워진다. <strong>구독의 힘은 빈도 곱하기 락인</strong>이다.</p>
+
+<div class="pull">월마트는 매장으로 빈도를 잡고, 아마존은 프라임으로 락인을 건다. 두 회사는 서로가 가진 것을 얻으려 한다.</div>
+
+<h2><span class="n">07</span>이 이야기가 우리에게 말해 주는 것</h2>
+
+<ul class="src" style="font-size:16px;color:var(--ink)">
+  <li><strong>경쟁은 서로의 약점을 사는 일이다.</strong> 두 회사는 자기에게 없는 것을 사거나 만들어 간다.</li>
+  <li><strong>구매 빈도는 전략이다.</strong> 자주 사는 상품을 잡으면 다른 모든 상품의 길이 열린다.</li>
+  <li><strong>멤버십은 마케팅의 가장 강력한 형태 중 하나다.</strong> 반복 구매와 데이터, 락인을 한꺼번에 얻는다.</li>
+</ul>
+
+<p>그렇다면 이런 전략 아래에서 아마존은 실제로 어떻게 움직이고 있을까? 아마존은 최근 눈에 띄는 선택을 했다. 사람 없는 매장 실험을 접고, 라스트 마일에 더 많은 돈을 쏟기로 했다. 이 이야기는 다음 글에서 이어 간다.</p>
+
+<div class="box2 q">
+  <h3>생각해 볼 질문</h3>
+  <ol>
+    <li>식료품을 파는 곳이 곧 다른 모든 것을 파는 곳이 되는 이유는 무엇일까?</li>
+    <li>월마트의 강점(매장)은 온라인 시대에 약점일까, 강점일까?</li>
+    <li>프라임 같은 구독 서비스가 고객을 묶는 방식은 소비자에게 이로운가?</li>
+    <li>내가 쓰는 구독 서비스 하나를 골라 ‘빈도’와 ‘락인’의 관점에서 분석해 보자.</li>
+    <li>두 회사의 경쟁에서 중소 셀러는 어떤 위치에 서게 될까?</li>
+  </ol>
+</div>
+
+<h2><span class="n">참고</span>출처와 이미지</h2>
+<ul class="src">
+  <li>Wikipedia, “Walmart”, “Jet.com”, “Amazon Prime”, “Whole Foods Market”, “Sam Walton”, “Amazon (company)”</li>
+  <li>Fox 4 News, “Amazon is buying Whole Foods in $13.7B deal”; Digiday, “How Amazon’s slow growth in grocery sparked industrywide competition”</li>
+  <li>FoodNavigator-USA, “Walmart and Amazon’s rapid-delivery war raises consumer expectations” (2026.6); Chain Store Age, “Amazon launches one of its most significant grocery expansions”</li>
+  <li>이미지: Wikimedia Commons. 월마트 슈퍼센터(FLGALine1999, CC0)</li>
+  <li>영상: The Wall Street Journal (YouTube 임베드)</li>
+</ul>
+</article>
+
+<div class="back"><a href="../index.html#notes">← Random Walk로 돌아가기</a></div>
+<footer>© Jake Sang-Uk Jung</footer>
+<script>
+const bar=document.getElementById('bar');
+addEventListener('scroll',()=>{const h=document.documentElement;bar.style.transform='scaleX('+(h.scrollTop/(h.scrollHeight-h.clientHeight))+')'},{passive:true});
+</script>
+</body>
+</html>

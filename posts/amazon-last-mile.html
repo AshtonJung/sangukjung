@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>매장은 접고 라스트 마일은 넓히다 · Random Walk · Jake Sang-Uk Jung</title>
+<meta name="description" content="아마존이 Go와 Fresh 매장을 접고 홀푸드, 당일 배송, 농촌 배송망, 슈퍼센터에 집중하는 이유와 식품 셀러에게 주는 의미.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="매장은 접고 라스트 마일은 넓히다">
+<meta property="og:description" content="아마존 웨이 4편: 무인 매장 폐지와 라스트 마일 확대.">
+<meta property="og:image" content="https://ashtonjung.github.io/sangukjung/assets/walmart/amazon-go.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1730;--navy2:#12224a;--ivory:#f6f1e7;--paper:#fbf8f1;--blue:#1e9be0;--gold:#b8975a;--ink:#16213b;--mute:#6c7690}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Apple SD Gothic Neo','Noto Sans KR',sans-serif;background:var(--paper);color:var(--ink);line-height:1.85;-webkit-font-smoothing:antialiased;font-size:17px}
+a{color:var(--blue)}
+.bar{position:fixed;top:0;left:0;right:0;height:3px;background:var(--blue);transform-origin:0 50%;transform:scaleX(0);z-index:99}
+nav{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;padding:20px 5vw;color:#fff;z-index:5;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+nav a{color:#fff;text-decoration:none;opacity:.85}nav a:hover{opacity:1}
+nav .logo{font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.04em;text-transform:none}
+nav .logo b{color:var(--blue)}
+.hero{background:radial-gradient(1000px 600px at 75% 40%,#1c3a78 0%,var(--navy) 62%);color:#fff;padding:150px 6vw 90px;display:grid;grid-template-columns:1.2fr .8fr;gap:5vw;align-items:center}
+.hero .eyebrow{font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font-family:'Noto Serif KR','Cormorant Garamond',serif;font-weight:700;font-size:clamp(34px,5vw,64px);line-height:1.2;margin:18px 0 18px}
+.hero p{color:#d6dcec;font-size:clamp(16px,1.5vw,20px);font-weight:300;max-width:34em}
+.hero .meta{margin-top:22px;font-size:12px;color:#9fb0d6;letter-spacing:.08em}
+.hero figure{justify-self:center;width:min(360px,70vw)}
+.hero figure img{width:100%;border-radius:200px 200px 6px 6px;border:1px solid #ffffff44;box-shadow:0 40px 90px #000a;display:block;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%}
+.hero figcaption{font-size:11px;color:#9fb0d6;margin-top:10px;text-align:center}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.hero figure{order:-1;width:min(240px,60vw)}}
+article{max-width:760px;margin:0 auto;padding:70px 6vw 40px}
+article p{margin-bottom:1.15em}
+article h2{font-family:'Noto Serif KR','Cormorant Garamond',serif;font-weight:700;font-size:clamp(24px,3vw,32px);line-height:1.3;margin:2.4em 0 .7em;padding-top:.4em;border-top:1px solid #e6dfcf}
+article h2 .n{display:block;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.2em;color:var(--gold);font-weight:500;margin-bottom:6px}
+article strong{color:var(--navy)}
+.lead{font-size:20px;color:var(--ink);font-weight:400}
+.term{display:inline-block;background:#e9f4fc;color:#0d6aa3;font-size:.82em;padding:1px 9px;border-radius:20px;margin:0 2px;white-space:nowrap}
+.pull{margin:1.6em 0;padding:22px 26px;background:var(--navy);color:#fff;border-left:4px solid var(--blue);font-family:'Noto Serif KR',serif;font-size:19px;line-height:1.7}
+figure.img{margin:2em -4vw}
+figure.img img{width:100%;display:block;border-radius:4px;box-shadow:0 20px 50px #0b173030;max-height:560px;object-fit:contain;background:#efe9da}
+figure.img.tall img{max-width:420px;margin:0 auto}
+figure.img figcaption{font-size:13px;color:var(--mute);margin-top:10px;line-height:1.5;text-align:center}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:2em -4vw}
+.two figure{margin:0}.two img{width:100%;height:340px;object-fit:contain;background:#efe9da;border-radius:4px;display:block;box-shadow:0 20px 50px #0b173030}
+.two figcaption{font-size:13px;color:var(--mute);margin-top:8px;line-height:1.5;text-align:center}
+@media(max-width:700px){.two{grid-template-columns:1fr;margin:2em 0}figure.img{margin:2em 0}}
+.video{margin:2.2em -4vw}
+.video .box{position:relative;padding-top:56.25%;background:#000;border-radius:6px;overflow:hidden;box-shadow:0 20px 50px #0b173040}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video p{font-size:13px;color:var(--mute);margin-top:10px;text-align:center}
+@media(max-width:700px){.video{margin:2em 0}}
+table{width:100%;border-collapse:collapse;margin:1.6em 0;font-size:15px;background:#fff;border:1px solid #e6dfcf}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid #eee7d6}
+th{background:var(--navy);color:#fff;font-weight:500;font-size:13px;letter-spacing:.05em}
+td:first-child{font-weight:600;color:var(--navy);white-space:nowrap}
+.tl{list-style:none;margin:1.6em 0;padding-left:26px;border-left:1px solid #d8cfba}
+.tl li{position:relative;padding:0 0 18px 6px;font-size:15.5px;line-height:1.6}
+.tl li::before{content:'';position:absolute;left:-33px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--paper);border:2px solid var(--blue)}
+.tl b{font-family:'JetBrains Mono',monospace;color:var(--blue);font-size:13px;margin-right:8px}
+.box2{background:var(--ivory);border:1px solid #e6dfcf;border-radius:6px;padding:24px 28px;margin:2em 0;font-size:15.5px}
+.box2 h3{font-family:'Noto Serif KR',serif;font-size:19px;margin-bottom:10px;color:var(--navy)}
+.box2 li{margin:6px 0 6px 18px}
+.box2.q{background:var(--navy);color:#e8ecf7;border:none}.box2.q h3{color:#fff}
+.src{font-size:13.5px;color:var(--mute);line-height:1.7}
+.src li{margin:4px 0 4px 18px}
+.back{max-width:760px;margin:0 auto;padding:10px 6vw 90px}
+.back a{display:inline-block;padding:13px 26px;border:1px solid var(--navy);text-decoration:none;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);transition:.25s}
+.back a:hover{background:var(--navy);color:#fff}
+footer{background:var(--navy);color:#9fb0d6;text-align:center;padding:40px 6vw;font-size:12px}
+.hero figure.wide{width:min(480px,86vw)}.hero figure.wide img{border-radius:8px;aspect-ratio:2/1;object-fit:cover;object-position:50% 50%}
+.tl.wide li b{display:inline-block;min-width:52px}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+<nav><a class="logo" href="../index.html">Jake Sang-Uk <b>Jung</b></a><a href="../index.html#notes">← Random Walk</a></nav>
+
+<header class="hero">
+  <div>
+    <div class="eyebrow">Random Walk · The Amazon Way 4</div>
+    <h1>매장은 접고<br>라스트 마일은 넓히다</h1>
+    <p>무인 매장의 꿈이 접힌 자리에 아마존이 짓는 것</p>
+    <div class="meta">정상욱 · 한국외국어대학교 마케팅 · 읽는 시간 약 11분</div>
+  </div>
+  <figure class="wide">
+    <img src="../assets/walmart/amazon-go.jpg" alt="시애틀의 아마존 고 매장">
+    <figcaption>시애틀의 Amazon Go 매장. 2026년 폐점이 발표되었다 · 사진: Brianc333a (CC BY-SA 4.0)</figcaption>
+  </figure>
+</header>
+
+<article>
+<p class="lead"><a href="amazon-walmart-war.html">앞 글</a>에서 아마존이 식료품이라는 빈칸을 채우려 서로의 땅을 넘보고 있다고 했다. 그 방법으로 한때 가장 화려했던 것은 <strong>계산대 없는 무인 매장</strong>이었다. 그런데 2026년 1월, 아마존은 그 실험을 접겠다고 발표했다.</p>
+
+<p>무슨 일이 있었고, 그 자리에 아마존은 무엇을 짓고 있을까? 이 글은 <strong>접은 것과 넓히는 것</strong>을 나란히 놓고 아마존의 전략이 어디로 가는지 읽어 본다.</p>
+
+<div class="box2">
+  <h3>이 글에서 확인할 개념</h3>
+  <span class="term">라스트 마일</span><span class="term">풀필먼트 거점</span><span class="term">기술 실험과 사업성</span><span class="term">옴니채널</span><span class="term">프라이빗 라벨(PB)</span><span class="term">빈도와 습관</span>
+</div>
+
+<h2><span class="n">01</span>줄 서지 않는 가게라는 꿈</h2>
+
+<p>2018년 1월 22일, 시애틀에 <strong>Amazon Go</strong> 1호점이 일반에 문을 열었다. 카메라와 센서, 컴퓨터 비전으로 손님이 집어 든 물건을 알아보고, 가게를 나가면 자동으로 결제되는 ‘Just Walk Out’ 방식이었다. 계산대도, 줄도 없었다. 2023년에는 시애틀, 시카고, 로스앤젤레스, 런던, 뉴욕에 모두 43곳의 매장이 열렸거나 예고되었다.</p>
+
+<p>아마존은 이 기술을 더 큰 식료품점에도 가져갔다. <strong>Amazon Fresh</strong>는 2007년 워싱턴주에서 초대받은 사람만 쓰는 식료품 배송으로 출발했고, 2020년에는 오프라인 슈퍼마켓 체인으로 모습을 바꿨다.</p>
+
+<h2><span class="n">02</span>꿈이 삐걱대기 시작하다</h2>
+
+<p>2024년 4월 아마존은 Fresh 매장에서 Just Walk Out 기술을 빼겠다고 밝혔고, 대신 손님이 카트에 달린 스캐너로 직접 찍는 <strong>대시 카트(Dash Cart)</strong>를 쓰기로 했다. 무인 결제라는 간판을 스스로 내린 셈이다. 설치와 유지 비용이 크다는 점과, 자동 같아 보여도 결제를 확인하는 데 많은 사람이 투입된다는 보도가 이어졌다.</p>
+
+<h2><span class="n">03</span>2026년 1월 27일, 폐점 발표</h2>
+
+<p>2026년 1월 27일, 아마존은 Amazon Go와 Amazon Fresh 매장을 접고 홀푸드마켓과 식료품 배송에 집중하겠다고 발표했다. 보도에 따르면 대상은 Fresh 57곳, Go 15곳으로 모두 72곳이었고, 캘리포니아는 주 규정 때문에 더 늦게 닫는다. 일부는 홀푸드로 바뀐다.</p>
+
+<p>이유로 아마존이 든 말은 이렇다. 아마존 브랜드 매장에서 고무적인 신호는 봤지만, <strong>“대규모로 확장하기에 알맞은 경제성을 갖춘, 진정으로 차별화된 고객 경험을 아직 만들지 못했다”</strong>는 것이다.</p>
+
+<div class="pull">기술적으로 되는 것과 사업으로 되는 것은 다르다.</div>
+
+<p>Just Walk Out 기술 자체가 사라지는 것은 아니라는 보도도 있다. 경기장, 병원, 공항 같은 곳의 제3자 매장에 기술을 빌려주는 사업으로 이어진다는 것이다. 매장에서는 접고 <strong>기술은 판다</strong>. 아마존이 자주 쓰는 방식이다.</p>
+
+<h2><span class="n">04</span>접은 것과 넓히는 것</h2>
+
+<table>
+  <tr><th>접은 것</th><th>넓히는 것</th></tr>
+  <tr><td>Amazon Go (소형 무인 매장)</td><td>홀푸드마켓 신규 출점 100곳 이상 계획</td></tr>
+  <tr><td>Amazon Fresh (대중형 슈퍼마켓)</td><td>당일 신선식품 배송, 2,300여 개 도시로 확대 목표</td></tr>
+  <tr><td>Just Walk Out의 자체 매장 활용</td><td>농촌 배송망 40억 달러 투자, 배송 거점 200곳</td></tr>
+  <tr><td></td><td>슈퍼센터 구상(교외형 대형 매장)</td></tr>
+</table>
+
+<p>눈여겨볼 점은 접은 것이 모두 <strong>아마존 브랜드를 단 작은 매장</strong>이라는 것이다. 반면 넓히는 것은 인수해서 이미 자리를 잡은 홀푸드와, 매장이 아니라 <strong>배송 인프라</strong>다. 매장 자체가 목적이 아니라는 신호다.</p>
+
+<h2><span class="n">05</span>홀푸드, 그리고 도시의 작은 매장</h2>
+
+<p>아마존은 이제 오프라인에서 사실상 홀푸드 하나를 남긴다. 아마존은 홀푸드가 2017년 인수 이후 매출이 40% 넘게 늘었고 매장이 550곳 넘게 있다고 밝혔다. 그리고 앞으로 100곳 이상 새로 열 계획이다.</p>
+
+<div class="two">
+  <figure><img src="../assets/walmart/wholefoods-dailyshop.jpg" alt="뉴욕 홀푸드 데일리 숍의 농산물 코너"><figcaption>홀푸드 데일리 숍(뉴욕)의 농산물 코너 · Nielsoncaetanosalmeron (CC BY 4.0)</figcaption></figure>
+  <div style="align-self:center;font-size:16px;line-height:1.8">
+    <p>도심에는 작은 형태의 <strong>홀푸드 데일리 숍(Daily Shop)</strong>이 있다. 2024년 맨해튼에서 시작한 소형 점포로, 아마존은 2026년 말까지 5곳을 더 연다고 밝혔다.</p>
+    <p>정리하면 도심의 작은 매장은 ‘아마존’이 아니라 <strong>홀푸드 이름으로</strong> 늘어난다.</p>
+  </div>
+</div>
+
+<h2><span class="n">06</span>라스트 마일: 마지막 구간에 돈을 쏟다</h2>
+
+<p><strong>라스트 마일(last mile)</strong>은 물건이 지역 거점에서 고객의 집 앞까지 가는 마지막 구간이다. 배송 비용에서 가장 큰 비중을 차지하는 구간으로 흔히 꼽힌다. 아마존이 매장을 접고 이 구간에 힘을 싣는 이유가 여기 있다.</p>
+
+<figure class="img">
+  <img src="../assets/walmart/delivery-station.jpg" alt="아마존 배송 스테이션">
+  <figcaption>아마존의 배송 스테이션. 라스트 마일의 출발점이다 · Wikideas1 (CC0)</figcaption>
+</figure>
+
+<ul class="src" style="font-size:16px;color:var(--ink)">
+  <li><strong>농촌 배송망</strong>: 2026년 말까지 40억 달러를 투자해 배송 거점 200곳을 새로 열고 1만 3천 개가 넘는 우편번호 지역에 닿게 한다. 농촌의 배송 속도를 최대 50% 높이겠다는 목표다.</li>
+  <li><strong>당일 신선식품 배송</strong>: 약 1,000여 개 도시에서 2,300여 개 도시로 확대했거나 확대 중이다. 아마존은 이 서비스의 신선식품 매출이 2025년 1월 이후 40배 늘었고, 서비스 지역에서 가장 많이 주문된 상품 열 가지 중 아홉 가지가 신선식품이라고 밝혔다.</li>
+  <li><strong>초고속 배송</strong>: 30분 배송 ‘Amazon Now’를 몇몇 도시에서 시험 중이다.</li>
+</ul>
+
+<div class="video">
+  <div class="box"><iframe src="https://www.youtube.com/embed/QlbuY24alSk" title="Inside Amazon's Meticulous Same-Day Delivery Strategy - WSJ Shipping Wars" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+  <p>영상: Inside Amazon’s Meticulous Same-Day Delivery Strategy, WSJ Shipping Wars. 당일 배송 전략을 다룬다.</p>
+</div>
+
+<p>이 숫자들은 모두 아마존이 직접 밝힌 것이거나 이를 인용한 보도다. 눈에 띄는 것은 식료품이 배송의 ‘핵심 상품’이 되어 간다는 점이다. <a href="amazon-walmart-war.html">앞 글</a>의 말을 빌리면 <strong>빈도 높은 소비가 배송망을 끌고 간다</strong>. 자주 오는 주문이 있어야 촘촘한 거점이 경제성을 갖는다.</p>
+
+<h2><span class="n">07</span>그런데 왜 슈퍼센터인가</h2>
+
+<p>한 가지 더 있다. 매장을 접는다면서 슈퍼센터라니 모순 아닐까? 보도에 따르면 시카고 근교 올랜드 파크에 약 22만 9천 제곱피트, 약 2만 1천 제곱미터 규모의 매장이 계획되어 있고 개점은 2027년으로 알려졌다. 절반은 손님이 걷는 매장이고, 절반은 <strong>소형 물류센터</strong>다. 아마존 발표문에는 이를 “탐색 중인 새로운 콘셉트”라고만 적었다.</p>
+
+<p>이 구조를 이렇게 읽을 수 있다. (제 해석이다.)</p>
+
+<table>
+  <tr><th>무인 매장 (접음)</th><th>슈퍼센터 (구상)</th></tr>
+  <tr><td>작은 매장, 기술이 핵심</td><td>큰 매장, 물류가 핵심</td></tr>
+  <tr><td>매장은 손님을 받는 곳</td><td>매장이 배송 거점을 겸함</td></tr>
+  <tr><td>경제성이 불투명</td><td>매장과 물류의 규모의 경제를 노림</td></tr>
+</table>
+
+<p>월마트의 방식, 곧 <strong>매장이 곧 물류센터</strong>라는 모델을 아마존이 자기 식으로 받아들이는 모습처럼도 보인다. 앞 글에서 본 대로 서로의 방식을 닮아 가는 것이다.</p>
+
+<h2><span class="n">08</span>식품 셀러에게 이 흐름은 무엇을 뜻할까</h2>
+
+<p>한국 식품을 아마존에서 파는 셀러라면 이 흐름이 남의 이야기가 아니다. 식품이 아마존 전략의 한가운데로 들어오고 있기 때문이다. (이 절은 제 해석이고 가능성을 정리한 것이다.)</p>
+
+<table>
+  <tr><th>기회</th><th>위험</th></tr>
+  <tr><td>식품을 찾는 트래픽과 구매 빈도가 늘어난다</td><td>아마존과 홀푸드의 자체 브랜드(PB)와 직접 경쟁할 수 있다</td></tr>
+  <tr><td>당일·초고속 배송이 식품의 편의성을 높인다</td><td>빠른 배송 속도에 맞는 재고와 물류 대응이 요구된다</td></tr>
+  <tr><td>홀푸드 같은 오프라인 접점이 생길 가능성</td><td>가격 경쟁이 더 치열해질 수 있다</td></tr>
+</table>
+
+<p>그리고 <a href="amazon-narrow-door.html">2편</a>에서 본 문제가 더 커진다. 식료품은 규격화된 상품에 가까워서, 아마존 안에서 차별화할 여지가 더 좁다. 그래서 <strong>한국 식품이라는 이야기는 아마존 밖에서 더 열심히 만들어야</strong> 한다. 웨지우드가 쇼룸에서 이야기를 전시했듯이.</p>
+
+<div class="pull">아마존은 상점의 이름을 버리고 인프라를 택했다. 상품을 파는 사람은 인프라 위에서 자기 이야기를 지켜야 한다.</div>
+
+<div class="box2 q">
+  <h3>생각해 볼 질문</h3>
+  <ol>
+    <li>무인 매장은 기술적으로 성공했는데 왜 사업적으로는 접혔을까? 기술과 사업의 차이는 무엇인가?</li>
+    <li>라스트 마일에 쓰는 비용을 아마존은 누구에게서 회수하게 될까? 소비자, 셀러, 아마존 자신 중 누구일까?</li>
+    <li>아마존이 월마트의 방식을 닮아 가는 것은 승리일까, 양보일까?</li>
+    <li>식품 셀러가 아마존의 PB와 겹칠 때 어떤 전략이 가능할까?</li>
+    <li>나라면 아마존의 ‘접은 것’과 ‘넓히는 것’ 중 어디에 투자하겠는가?</li>
+  </ol>
+</div>
+
+<h2><span class="n">참고</span>출처와 이미지</h2>
+<ul class="src">
+  <li>Amazon 공식 발표, “Amazon Fresh와 Go 매장 폐점 및 홀푸드 확대”(aboutamazon.com, 2026.5 갱신)</li>
+  <li>WTOP, “Amazon to close most Amazon Go and Amazon Fresh stores” (2026.1.27); Chain Store Age, “Amazon launches one of its most significant grocery expansions”</li>
+  <li>Retail Dive, “Amazon rural delivery expansion”; GeekWire, “Amazon supersizes its Walmart rivalry with new big box retail concept”(2026); Shelf Awareness(2026.1)</li>
+  <li>Wikipedia, “Amazon Go”, “Amazon Fresh”, “Whole Foods Market”</li>
+  <li>이미지: Wikimedia Commons. Amazon Go(Brianc333a, CC BY-SA 4.0), 배송 스테이션(Wikideas1, CC0), 홀푸드 데일리 숍(Nielsoncaetanosalmeron, CC BY 4.0)</li>
+  <li>영상: The Wall Street Journal (YouTube 임베드)</li>
+</ul>
+</article>
+
+<div class="back"><a href="../index.html#notes">← Random Walk로 돌아가기</a></div>
+<footer>© Jake Sang-Uk Jung</footer>
+<script>
+const bar=document.getElementById('bar');
+addEventListener('scroll',()=>{const h=document.documentElement;bar.style.transform='scaleX('+(h.scrollTop/(h.scrollHeight-h.clientHeight))+')'},{passive:true});
+</script>
+</body>
+</html>
