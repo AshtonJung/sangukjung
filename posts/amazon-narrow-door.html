@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>차별화가 허락된 좁은 문 · Random Walk · Jake Sang-Uk Jung</title>
+<meta name="description" content="A+ 콘텐츠, 표현 규제, 계정 제재, 틱톡과의 비교. 아마존에서 브랜드 이야기가 숨 쉴 수 있는 자리는 어디이고, 브랜드는 어디서 만들어지는가.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="차별화가 허락된 좁은 문">
+<meta property="og:description" content="아마존 웨이 2편: A+ 콘텐츠, 표현 규제, 그리고 브랜드는 어디서 만들어지는가.">
+<meta property="og:image" content="https://ashtonjung.github.io/sangukjung/assets/wedgwood/jasper-teapot.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1730;--navy2:#12224a;--ivory:#f6f1e7;--paper:#fbf8f1;--blue:#1e9be0;--gold:#b8975a;--ink:#16213b;--mute:#6c7690}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Apple SD Gothic Neo','Noto Sans KR',sans-serif;background:var(--paper);color:var(--ink);line-height:1.85;-webkit-font-smoothing:antialiased;font-size:17px}
+a{color:var(--blue)}
+.bar{position:fixed;top:0;left:0;right:0;height:3px;background:var(--blue);transform-origin:0 50%;transform:scaleX(0);z-index:99}
+nav{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;padding:20px 5vw;color:#fff;z-index:5;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+nav a{color:#fff;text-decoration:none;opacity:.85}nav a:hover{opacity:1}
+nav .logo{font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.04em;text-transform:none}
+nav .logo b{color:var(--blue)}
+.hero{background:radial-gradient(1000px 600px at 75% 40%,#1c3a78 0%,var(--navy) 62%);color:#fff;padding:150px 6vw 90px;display:grid;grid-template-columns:1.2fr .8fr;gap:5vw;align-items:center}
+.hero .eyebrow{font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font-family:'Noto Serif KR','Cormorant Garamond',serif;font-weight:700;font-size:clamp(34px,5vw,64px);line-height:1.2;margin:18px 0 18px}
+.hero p{color:#d6dcec;font-size:clamp(16px,1.5vw,20px);font-weight:300;max-width:34em}
+.hero .meta{margin-top:22px;font-size:12px;color:#9fb0d6;letter-spacing:.08em}
+.hero figure{justify-self:center;width:min(360px,70vw)}
+.hero figure img{width:100%;border-radius:200px 200px 6px 6px;border:1px solid #ffffff44;box-shadow:0 40px 90px #000a;display:block;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%}
+.hero figcaption{font-size:11px;color:#9fb0d6;margin-top:10px;text-align:center}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.hero figure{order:-1;width:min(240px,60vw)}}
+article{max-width:760px;margin:0 auto;padding:70px 6vw 40px}
+article p{margin-bottom:1.15em}
+article h2{font-family:'Noto Serif KR','Cormorant Garamond',serif;font-weight:700;font-size:clamp(24px,3vw,32px);line-height:1.3;margin:2.4em 0 .7em;padding-top:.4em;border-top:1px solid #e6dfcf}
+article h2 .n{display:block;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.2em;color:var(--gold);font-weight:500;margin-bottom:6px}
+article strong{color:var(--navy)}
+.lead{font-size:20px;color:var(--ink);font-weight:400}
+.term{display:inline-block;background:#e9f4fc;color:#0d6aa3;font-size:.82em;padding:1px 9px;border-radius:20px;margin:0 2px;white-space:nowrap}
+.pull{margin:1.6em 0;padding:22px 26px;background:var(--navy);color:#fff;border-left:4px solid var(--blue);font-family:'Noto Serif KR',serif;font-size:19px;line-height:1.7}
+figure.img{margin:2em -4vw}
+figure.img img{width:100%;display:block;border-radius:4px;box-shadow:0 20px 50px #0b173030;max-height:560px;object-fit:contain;background:#efe9da}
+figure.img.tall img{max-width:420px;margin:0 auto}
+figure.img figcaption{font-size:13px;color:var(--mute);margin-top:10px;line-height:1.5;text-align:center}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:2em -4vw}
+.two figure{margin:0}.two img{width:100%;height:340px;object-fit:contain;background:#efe9da;border-radius:4px;display:block;box-shadow:0 20px 50px #0b173030}
+.two figcaption{font-size:13px;color:var(--mute);margin-top:8px;line-height:1.5;text-align:center}
+@media(max-width:700px){.two{grid-template-columns:1fr;margin:2em 0}figure.img{margin:2em 0}}
+.video{margin:2.2em -4vw}
+.video .box{position:relative;padding-top:56.25%;background:#000;border-radius:6px;overflow:hidden;box-shadow:0 20px 50px #0b173040}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video p{font-size:13px;color:var(--mute);margin-top:10px;text-align:center}
+@media(max-width:700px){.video{margin:2em 0}}
+table{width:100%;border-collapse:collapse;margin:1.6em 0;font-size:15px;background:#fff;border:1px solid #e6dfcf}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid #eee7d6}
+th{background:var(--navy);color:#fff;font-weight:500;font-size:13px;letter-spacing:.05em}
+td:first-child{font-weight:600;color:var(--navy);white-space:nowrap}
+.tl{list-style:none;margin:1.6em 0;padding-left:26px;border-left:1px solid #d8cfba}
+.tl li{position:relative;padding:0 0 18px 6px;font-size:15.5px;line-height:1.6}
+.tl li::before{content:'';position:absolute;left:-33px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--paper);border:2px solid var(--blue)}
+.tl b{font-family:'JetBrains Mono',monospace;color:var(--blue);font-size:13px;margin-right:8px}
+.box2{background:var(--ivory);border:1px solid #e6dfcf;border-radius:6px;padding:24px 28px;margin:2em 0;font-size:15.5px}
+.box2 h3{font-family:'Noto Serif KR',serif;font-size:19px;margin-bottom:10px;color:var(--navy)}
+.box2 li{margin:6px 0 6px 18px}
+.box2.q{background:var(--navy);color:#e8ecf7;border:none}.box2.q h3{color:#fff}
+.src{font-size:13.5px;color:var(--mute);line-height:1.7}
+.src li{margin:4px 0 4px 18px}
+.back{max-width:760px;margin:0 auto;padding:10px 6vw 90px}
+.back a{display:inline-block;padding:13px 26px;border:1px solid var(--navy);text-decoration:none;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);transition:.25s}
+.back a:hover{background:var(--navy);color:#fff}
+footer{background:var(--navy);color:#9fb0d6;text-align:center;padding:40px 6vw;font-size:12px}
+.hero figure.wide{width:min(480px,86vw)}.hero figure.wide img{border-radius:8px;aspect-ratio:2/1;object-fit:cover;object-position:50% 50%}
+.tl.wide li b{display:inline-block;min-width:52px}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+<nav><a class="logo" href="../index.html">Jake Sang-Uk <b>Jung</b></a><a href="../index.html#notes">← Random Walk</a></nav>
+
+<header class="hero">
+  <div>
+    <div class="eyebrow">Random Walk · The Amazon Way 2</div>
+    <h1>차별화가 허락된<br>좁은 문</h1>
+    <p>A+ 콘텐츠, 표현 규제, 그리고 브랜드는 어디서 만들어지는가</p>
+    <div class="meta">정상욱 · 한국외국어대학교 마케팅 · 읽는 시간 약 10분</div>
+  </div>
+  <figure class="wide">
+    <img src="../assets/wedgwood/jasper-teapot.jpg" alt="웨지우드 블루 재스퍼웨어 찻주전자">
+    <figcaption>이야기가 담긴 제품, 웨지우드 재스퍼웨어 · Chazen Museum of Art (CC0)</figcaption>
+  </figure>
+</header>
+
+<article>
+<p class="lead"><a href="amazon-search-db.html">1편</a>에서 아마존은 상품을 규격에 맞춰 데이터베이스에 넣는 곳이라고 했다. 그렇다면 질문이 하나 남는다. <strong>그 규격 안에서 브랜드의 이야기는 어디에 쓸 수 있을까?</strong></p>
+
+<p><a href="wedgwood.html">웨지우드</a>는 같은 도기에 ‘여왕의 도자기’라는 이야기를 입혀 값을 올렸다. 아마존에서는 이야기를 쓸 칸이 정해져 있고, 쓸 수 없는 말도 정해져 있다. 이번 글은 그 <strong>좁은 문</strong>을 들여다본다. 그리고 문이 좁다면 브랜드는 어디서 만들어지는지도 묻는다.</p>
+
+<div class="box2">
+  <h3>이 글에서 확인할 개념</h3>
+  <span class="term">브랜드 스토리텔링</span><span class="term">A+ 콘텐츠</span><span class="term">표현 규제</span><span class="term">설득과 신뢰</span><span class="term">플랫폼 거버넌스</span><span class="term">외부 트래픽</span><span class="term">D2C</span>
+</div>
+
+<h2><span class="n">01</span>이야기를 쓸 수 있는 자리: A+ 콘텐츠</h2>
+
+<p>아마존이 셀러에게 허락하는 가장 큰 ‘이야기 공간’은 <strong>A+ 콘텐츠</strong>다. 상세 페이지 아래쪽에서 사진, 비교표, 브랜드 소개를 풍부하게 보여 주는 영역이다. 다만 조건이 있다.</p>
+
+<ul class="src" style="font-size:16px;color:var(--ink)">
+  <li><strong>브랜드 등록(Brand Registry)을 한 브랜드만</strong> 쓸 수 있다. 등록하려면 상표(등록 상표 또는 출원 중인 상표)가 있어야 한다.</li>
+  <li>미리 정해진 <strong>모듈</strong>(이미지와 글, 비교표, 사양표 등)을 조합해서 구성한다. 자유로운 웹페이지가 아니다.</li>
+  <li>상위 버전(Premium A+)은 영상, 인터랙티브 이미지 같은 모듈이 더 많다.</li>
+</ul>
+
+<p>앞서 본 제목의 75자 제한 뒤에 생긴 새 칸, ‘아이템 하이라이트(125자)’도 같은 방식이다. 이야기를 허락하되 <strong>아마존이 정한 그릇</strong>에 담게 한다.</p>
+
+<div class="video">
+  <div class="box"><iframe src="https://www.youtube.com/embed/L5BHD81Q5r0" title="Intro to A+ Content on Amazon - Amazon Seller University" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+  <p>영상: Intro to A+ Content on Amazon, Amazon Seller University. 아마존이 직접 소개하는 A+ 콘텐츠다.</p>
+</div>
+
+<p>비유하자면 이렇다. 웨지우드에게 쇼룸과 카탈로그는 자기가 마음대로 꾸미는 <em>무대</em>였다. 아마존의 A+ 콘텐츠는 아마존이 빌려준 <em>정해진 규격의 진열대</em>다. 같은 이야기라도 어디에서 하느냐에 따라 자유도가 완전히 다르다.</p>
+
+<h2><span class="n">02</span>쓸 수 없는 말들</h2>
+
+<p>더 눈에 띄는 것은 <strong>하지 못하게 한 것들</strong>이다. 아래는 아마존 정책을 다룬 2차 자료를 정리한 것이다. (공식 정책 원문은 셀러 센트럴 로그인이 필요해 직접 읽지 못했다. 반드시 본인 계정에서 확인하자.)</p>
+
+<table>
+  <tr><th>영역</th><th>제한되는 것으로 알려진 내용</th></tr>
+  <tr><td>A+ 콘텐츠</td><td>가격, 할인·무료배송 같은 홍보 문구, 보증, “1위”·“베스트셀러” 같은 표현, 고객 리뷰·별점 인용, 외부 링크, 경쟁사 비교</td></tr>
+  <tr><td>건강 식품·보충제</td><td>질병의 치료·예방 주장, 오해를 부르는 효능 표현</td></tr>
+  <tr><td>뷰티·건강 이미지</td><td>비포·애프터 사진, 체중·피부·모발 변화를 암시하는 이미지</td></tr>
+  <tr><td>환경 표현</td><td>“친환경” 같은 주장은 입증이 필요</td></tr>
+</table>
+
+<p>이 목록을 읽으면 공통점이 보인다. 지워진 것은 <strong>가장 강력한 설득 수단들</strong>이다. 가격 할인, “1위”라는 사회적 증거, 극적인 변화 사진, 경쟁사와의 직접 비교. 마케팅 교과서가 가르치는 효과 좋은 무기를 대부분 내려놓게 한 셈이다.</p>
+
+<h2><span class="n">03</span>“어기면 계정이 정지된다”는 말은 맞을까</h2>
+
+<p>흔히 이렇게 말한다. “비포·애프터 한 번 쓰면 계정이 날아간다.” 반은 맞고 반은 과장이다. 2차 자료들이 설명하는 제재는 보통 단계를 밟는다.</p>
+
+<ul class="tl wide">
+  <li><b>1단계</b>문제가 된 리스팅의 <strong>노출 제한(suppression)</strong>. 해당 상품이 검색에서 사라지고, 수정하면 복구된다</li>
+  <li><b>2단계</b>리스팅 <strong>삭제</strong>, 판매 권한 제한</li>
+  <li><b>3단계</b>반복되거나 심각하면 <strong>계정 정지</strong></li>
+</ul>
+
+<p>대부분은 1단계에서 끝난다. 다만 셀러에게는 1단계도 치명적이다. 검색에서 사라지는 것은 곧 매출이 끊기는 것이고, 앞서 본 대로 판매 성과가 노출을 좌우하는 순환에서는 한 번의 공백이 오래 영향을 준다. <strong>제재의 무서움은 정지 자체보다 그 가능성이 셀러의 표현을 미리 줄이게 만든다</strong>는 데 있다.</p>
+
+<h2><span class="n">04</span>틱톡과 어떻게 다른가</h2>
+
+<p>틱톡에서는 비포·애프터가 흔히 보이는데 왜 아마존은 막을까? 단순히 “틱톡은 허용하고 아마존은 금지”라고 보면 정확하지 않다. 틱톡도 광고 정책이 있다. 알려진 바로는 체중 관리 제품 광고에서는 체중 변화 전후 사진이나 과장된 효과 주장을 금지하고, 2023년 9월에는 체중 감량 보조제와 단식 앱 광고를 금지한다고 밝혔다. 다만 진짜이고 가공하지 않은 전후 사진은 일부 맥락에서 허용된다고 한다.</p>
+
+<table>
+  <tr><th></th><th>틱톡</th><th>아마존 상세 페이지</th></tr>
+  <tr><td>공간의 성격</td><td>설득과 재미의 공간</td><td>신뢰와 비교의 공간</td></tr>
+  <tr><td>사용자의 마음</td><td>구경하다가 끌린다(충동)</td><td>사려고 찾아왔다(결정)</td></tr>
+  <tr><td>콘텐츠 주체</td><td>크리에이터, 영상</td><td>규격화된 이미지·글</td></tr>
+  <tr><td>표현의 자유</td><td>상대적으로 넓음(광고는 제한)</td><td>좁고 사전 규정이 많음</td></tr>
+</table>
+
+<p>핵심은 <strong>두 공간이 하는 일이 다르다</strong>는 것이다. 틱톡은 아직 필요를 모르는 사람의 마음을 움직이는 곳이다. 아마존은 이미 사려는 사람이 마지막으로 확인하는 곳이다. 후자에서는 과장이 곧 환불과 불만으로 돌아온다.</p>
+
+<h2><span class="n">05</span>왜 이렇게 설계했을까</h2>
+
+<p>(이 절은 사실 확인이 아니라 <strong>제 해석</strong>이다.)</p>
+
+<table>
+  <tr><th>이유</th><th>설명</th></tr>
+  <tr><td>① 신뢰의 소유자는 아마존</td><td>소비자는 셀러가 아니라 “아마존에서 샀다”고 기억한다. 한 셀러의 과장이 아마존 전체의 신뢰를 깎는다</td></tr>
+  <tr><td>② 책임의 문제</td><td>허위·과장 광고는 규제 기관의 관심 대상이다. 플랫폼은 스스로 책임을 줄이려 한다</td></tr>
+  <tr><td>③ 비교의 공정성</td><td>한 셀러만 과장하면 정직한 셀러가 불리해진다. 같은 기준이 필요하다</td></tr>
+  <tr><td>④ 반품 비용</td><td>기대가 부풀려지면 반품이 늘고 물류 비용이 커진다</td></tr>
+  <tr><td>⑤ 힘의 구조</td><td>설득 수단이 줄면 셀러의 차별화 무기도 줄고, 가격과 광고 입찰이 남는다</td></tr>
+</table>
+
+<div class="pull">①~④는 소비자를 지키는 이유다. ⑤는 플랫폼을 지키는 결과다. 두 가지가 같은 규칙 안에서 함께 작동한다.</div>
+
+<p>여기서 주의할 점이 있다. 규제 자체를 비판하자는 것이 아니다. 과장 광고를 막는 것은 소비자에게 이롭고 정직한 셀러에게도 이롭다. 문제는 <strong>규제의 효과가 한쪽으로 쏠릴 때</strong>다. 표현의 자유가 줄수록 셀러는 아마존 안에서 브랜드를 키우기 어려워지고, 아마존 안의 광고에 더 기대게 된다.</p>
+
+<h2><span class="n">06</span>그렇다면 브랜드는 어디서 만드는가</h2>
+
+<p>문이 좁다면 이야기를 다른 곳에서 해야 한다. 아마존도 이 점을 안다. 아마존에는 <strong>브랜드 등록을 한 셀러가 아마존 밖(구글, 메타, 틱톡, 이메일 등)에서 고객을 데려오면 판매 수수료를 일부 돌려주는 제도(Brand Referral Bonus)</strong>가 있다. 알려진 바로는 2021년 7월에 시작했고, 평균 10% 안팎의 보너스를 준다. 추적에는 ‘Amazon Attribution’이라는 도구를 쓴다.</p>
+
+<p>이 구조를 이렇게 읽을 수 있다.</p>
+
+<ul class="src" style="font-size:16px;color:var(--ink)">
+  <li><strong>이야기와 설득</strong>은 아마존 밖의 비용으로 한다(틱톡, 유튜브, 인스타그램, 구글).</li>
+  <li><strong>결제</strong>는 아마존 안에서 이루어지고, 고객은 아마존의 고객이 된다.</li>
+  <li>아마존은 그 대가로 수수료 일부를 돌려준다.</li>
+</ul>
+
+<p>브랜드 구축의 비용은 셀러가 내고, 전환과 고객 데이터는 플랫폼이 가져가는 구조다. 그래서 오래된 셀러들이 이렇게 말한다. <strong>“아마존은 매출을 만드는 곳이지, 브랜드를 만드는 곳이 아니다.”</strong></p>
+
+<div class="two">
+  <figure><img src="../assets/wedgwood/frog-service.jpg" alt="웨지우드의 개구리 식기 접시"><figcaption>웨지우드는 쇼룸에서 이야기를 전시했다(1774) · Brooklyn Museum (퍼블릭 도메인)</figcaption></figure>
+  <div style="align-self:center;font-size:16px;line-height:1.8">
+    <p>웨지우드에게는 쇼룸과 카탈로그가 있었다. 운더맨에게는 우편함과 반응 카드, 고객 명부가 있었다. 지금 브랜드에게도 <strong>자기만의 무대</strong>가 필요하다.</p>
+    <p>자체 쇼핑몰, 이메일 목록, SNS 계정. 모두 아마존이 허락해 주는 공간이 아니라 <strong>내 것</strong>이다.</p>
+  </div>
+</div>
+
+<h2><span class="n">07</span>세 이야기가 만나는 곳</h2>
+
+<table>
+  <tr><th>글</th><th>핵심 교훈</th></tr>
+  <tr><td><a href="wedgwood.html">웨지우드</a></td><td>제품 위에 이야기를 입히면 가치가 달라진다. 그 이야기는 내가 만든 무대에서 한다.</td></tr>
+  <tr><td><a href="wunderman.html">운더맨</a></td><td>고객에게 직접 말을 걸고 반응을 기록하는 것이 관계의 시작이다.</td></tr>
+  <tr><td>아마존 웨이 1·2편</td><td>플랫폼은 검색과 표현을 규격화해 편리함과 힘을 동시에 얻는다. 그 안에서 브랜드가 사라지지 않으려면 밖에서 따로 키워야 한다.</td></tr>
+</table>
+
+<p>아마존에서 파는 것을 배우는 일은 곧 <strong>플랫폼 안에서 팔면서 플랫폼 밖에서 브랜드를 만드는 법</strong>을 배우는 일이다. 규칙을 아는 사람만이 규칙 안에서 효율적으로 팔고, 규칙 밖에서 자산을 쌓는다.</p>
+
+<div class="box2 q">
+  <h3>생각해 볼 질문</h3>
+  <ol>
+    <li>아마존이 비포·애프터와 “1위” 표현을 제한하는 것은 소비자 보호일까, 셀러의 설득 수단을 줄이는 일일까? 둘 다일 수 있는 조건은 무엇인가?</li>
+    <li>틱톡에서 본 광고로 상품을 아마존에서 산 적이 있는가? 그때 브랜드는 누구에게 남았는가?</li>
+    <li>브랜드 등록과 상표가 없는 작은 셀러는 A+ 콘텐츠를 쓸 수 없다. 이것은 공정한가?</li>
+    <li>아마존 밖에서 브랜드를 키우려면 어떤 채널을 어떤 순서로 만들겠는가?</li>
+    <li>웨지우드가 지금 아마존 셀러라면 이야기를 어디서 풀겠는가?</li>
+  </ol>
+</div>
+
+<div class="box2">
+  <h3>이 글을 쓰며 확인한 것과 확인하지 못한 것</h3>
+  <ul>
+    <li><strong>확인</strong>: A+ 콘텐츠가 브랜드 등록 셀러 전용이고 모듈 형식이라는 점, 건강·뷰티 영역에서 효능 주장과 비포·애프터 이미지가 제한된다는 점(2차 자료), 틱톡의 체중 관리 광고 제한, 브랜드 추천 보너스(Brand Referral Bonus)의 존재.</li>
+    <li><strong>확인하지 못함</strong>: 아마존 공식 정책 원문(로그인 필요), 제재 단계의 공식 기준, 보너스 비율의 현재 값(카테고리별로 다르고 바뀔 수 있음).</li>
+  </ul>
+</div>
+
+<h2><span class="n">참고</span>출처와 이미지</h2>
+<ul class="src">
+  <li>Amazon Seller University 및 셀러 센트럴 도움말(A+ 콘텐츠, Product detail page rules, Image issues). 로그인이 필요한 부분은 원문을 직접 읽지 못했다.</li>
+  <li>2차 자료: A+ 콘텐츠 가이드(Channelengine, Riverbend Consulting 등), 아마존 보충제·뷰티 정책 해설(Fussy Penguins, Bellavix 등), Brand Referral Bonus 해설(Marketplace Pulse, EcomCrew 등)</li>
+  <li>TikTok 광고 정책: Business Insider(2023.9, 체중 감량 광고 금지 보도), 셀러 가이드(BigSeller)</li>
+  <li>이미지: Wikimedia Commons. 재스퍼웨어 찻주전자(Chazen Museum of Art, CC0), 개구리 식기(Brooklyn Museum, 퍼블릭 도메인)</li>
+  <li>영상: Amazon Seller University (YouTube 임베드)</li>
+</ul>
+</article>
+
+<div class="back"><a href="../index.html#notes">← Random Walk로 돌아가기</a></div>
+<footer>© Jake Sang-Uk Jung</footer>
+<script>
+const bar=document.getElementById('bar');
+addEventListener('scroll',()=>{const h=document.documentElement;bar.style.transform='scaleX('+(h.scrollTop/(h.scrollHeight-h.clientHeight))+')'},{passive:true});
+</script>
+</body>
+</html>
