@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>측정할 수 있는 광고를 만든 사람, 레스터 운더맨 · Random Walk · Jake Sang-Uk Jung</title>
+<meta name="description" content="다이렉트 마케팅이라는 이름을 붙이고 체계화한 레스터 운더맨. 쿠폰, 구독 카드, 수신자 부담 전화번호, 보상 프로그램까지 개인에게 말을 걸고 반응을 측정하는 마케팅의 시작.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="측정할 수 있는 광고를 만든 사람, 레스터 운더맨">
+<meta property="og:description" content="다이렉트 마케팅의 이름을 붙이고 체계를 만든 사람, 레스터 운더맨.">
+<meta property="og:image" content="https://ashtonjung.github.io/sangukjung/assets/wunderman/coke-coupon.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1730;--navy2:#12224a;--ivory:#f6f1e7;--paper:#fbf8f1;--blue:#1e9be0;--gold:#b8975a;--ink:#16213b;--mute:#6c7690}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Apple SD Gothic Neo','Noto Sans KR',sans-serif;background:var(--paper);color:var(--ink);line-height:1.85;-webkit-font-smoothing:antialiased;font-size:17px}
+a{color:var(--blue)}
+.bar{position:fixed;top:0;left:0;right:0;height:3px;background:var(--blue);transform-origin:0 50%;transform:scaleX(0);z-index:99}
+nav{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;padding:20px 5vw;color:#fff;z-index:5;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+nav a{color:#fff;text-decoration:none;opacity:.85}nav a:hover{opacity:1}
+nav .logo{font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.04em;text-transform:none}
+nav .logo b{color:var(--blue)}
+.hero{background:radial-gradient(1000px 600px at 75% 40%,#1c3a78 0%,var(--navy) 62%);color:#fff;padding:150px 6vw 90px;display:grid;grid-template-columns:1.2fr .8fr;gap:5vw;align-items:center}
+.hero .eyebrow{font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font-family:'Noto Serif KR','Cormorant Garamond',serif;font-weight:700;font-size:clamp(34px,5vw,64px);line-height:1.2;margin:18px 0 18px}
+.hero p{color:#d6dcec;font-size:clamp(16px,1.5vw,20px);font-weight:300;max-width:34em}
+.hero .meta{margin-top:22px;font-size:12px;color:#9fb0d6;letter-spacing:.08em}
+.hero figure{justify-self:center;width:min(360px,70vw)}
+.hero figure img{width:100%;border-radius:200px 200px 6px 6px;border:1px solid #ffffff44;box-shadow:0 40px 90px #000a;display:block;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%}
+.hero figcaption{font-size:11px;color:#9fb0d6;margin-top:10px;text-align:center}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.hero figure{order:-1;width:min(240px,60vw)}}
+article{max-width:760px;margin:0 auto;padding:70px 6vw 40px}
+article p{margin-bottom:1.15em}
+article h2{font-family:'Noto Serif KR','Cormorant Garamond',serif;font-weight:700;font-size:clamp(24px,3vw,32px);line-height:1.3;margin:2.4em 0 .7em;padding-top:.4em;border-top:1px solid #e6dfcf}
+article h2 .n{display:block;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.2em;color:var(--gold);font-weight:500;margin-bottom:6px}
+article strong{color:var(--navy)}
+.lead{font-size:20px;color:var(--ink);font-weight:400}
+.term{display:inline-block;background:#e9f4fc;color:#0d6aa3;font-size:.82em;padding:1px 9px;border-radius:20px;margin:0 2px;white-space:nowrap}
+.pull{margin:1.6em 0;padding:22px 26px;background:var(--navy);color:#fff;border-left:4px solid var(--blue);font-family:'Noto Serif KR',serif;font-size:19px;line-height:1.7}
+figure.img{margin:2em -4vw}
+figure.img img{width:100%;display:block;border-radius:4px;box-shadow:0 20px 50px #0b173030;max-height:560px;object-fit:contain;background:#efe9da}
+figure.img.tall img{max-width:420px;margin:0 auto}
+figure.img figcaption{font-size:13px;color:var(--mute);margin-top:10px;line-height:1.5;text-align:center}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:2em -4vw}
+.two figure{margin:0}.two img{width:100%;height:340px;object-fit:contain;background:#efe9da;border-radius:4px;display:block;box-shadow:0 20px 50px #0b173030}
+.two figcaption{font-size:13px;color:var(--mute);margin-top:8px;line-height:1.5;text-align:center}
+@media(max-width:700px){.two{grid-template-columns:1fr;margin:2em 0}figure.img{margin:2em 0}}
+.video{margin:2.2em -4vw}
+.video .box{position:relative;padding-top:56.25%;background:#000;border-radius:6px;overflow:hidden;box-shadow:0 20px 50px #0b173040}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video p{font-size:13px;color:var(--mute);margin-top:10px;text-align:center}
+@media(max-width:700px){.video{margin:2em 0}}
+table{width:100%;border-collapse:collapse;margin:1.6em 0;font-size:15px;background:#fff;border:1px solid #e6dfcf}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid #eee7d6}
+th{background:var(--navy);color:#fff;font-weight:500;font-size:13px;letter-spacing:.05em}
+td:first-child{font-weight:600;color:var(--navy);white-space:nowrap}
+.tl{list-style:none;margin:1.6em 0;padding-left:26px;border-left:1px solid #d8cfba}
+.tl li{position:relative;padding:0 0 18px 6px;font-size:15.5px;line-height:1.6}
+.tl li::before{content:'';position:absolute;left:-33px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--paper);border:2px solid var(--blue)}
+.tl b{font-family:'JetBrains Mono',monospace;color:var(--blue);font-size:13px;margin-right:8px}
+.box2{background:var(--ivory);border:1px solid #e6dfcf;border-radius:6px;padding:24px 28px;margin:2em 0;font-size:15.5px}
+.box2 h3{font-family:'Noto Serif KR',serif;font-size:19px;margin-bottom:10px;color:var(--navy)}
+.box2 li{margin:6px 0 6px 18px}
+.box2.q{background:var(--navy);color:#e8ecf7;border:none}.box2.q h3{color:#fff}
+.src{font-size:13.5px;color:var(--mute);line-height:1.7}
+.src li{margin:4px 0 4px 18px}
+.back{max-width:760px;margin:0 auto;padding:10px 6vw 90px}
+.back a{display:inline-block;padding:13px 26px;border:1px solid var(--navy);text-decoration:none;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);transition:.25s}
+.back a:hover{background:var(--navy);color:#fff}
+footer{background:var(--navy);color:#9fb0d6;text-align:center;padding:40px 6vw;font-size:12px}
+.hero figure.wide{width:min(480px,86vw)}.hero figure.wide img{border-radius:8px;aspect-ratio:2/1;object-fit:cover;object-position:50% 50%}
+.tl.wide li b{display:inline-block;min-width:52px}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+<nav><a class="logo" href="../index.html">Jake Sang-Uk <b>Jung</b></a><a href="../index.html#notes">← Random Walk</a></nav>
+
+<header class="hero">
+  <div>
+    <div class="eyebrow">Random Walk · Marketing History</div>
+    <h1>측정할 수 있는 광고를<br>만든 사람</h1>
+    <p>레스터 운더맨, 그리고 ‘나에게 말을 거는 마케팅’의 시작</p>
+    <div class="meta">정상욱 · 한국외국어대학교 마케팅 · 읽는 시간 약 10분</div>
+  </div>
+  <figure class="wide">
+    <img src="../assets/wunderman/coke-coupon.jpg" alt="19세기 코카콜라 무료 음료 쿠폰">
+    <figcaption>19세기 코카콜라의 무료 음료 쿠폰. 최초의 쿠폰으로 여겨진다 · Coca-Cola Company (퍼블릭 도메인)</figcaption>
+  </figure>
+</header>
+
+<article>
+<p class="lead">오늘 우리는 하루에도 수십 번씩 “나에게만 온 것처럼 보이는” 메시지를 받는다. 이메일, 문자, 앱 알림, 멤버십 혜택, 쿠폰. 브랜드는 내가 열어 봤는지, 눌렀는지, 샀는지까지 기록한다.</p>
+
+<p>이 방식은 어느 날 갑자기 나타난 것이 아니다. 개인에게 직접 말을 걸고 그 반응을 측정하는 마케팅에 이름을 붙이고 체계를 세운 사람이 있다. 광고인 <strong>레스터 운더맨(Lester Wunderman, 1920–2019)</strong>이다. 그는 흔히 <strong>‘다이렉트 마케팅의 창시자’</strong>로 불린다.</p>
+
+<p>그런데 “창시자”라는 말은 조심해서 써야 한다. 우편 카탈로그도, 쿠폰도, 반응을 측정하려는 시도도 그가 태어나기 훨씬 전부터 있었기 때문이다. 그렇다면 운더맨은 정확히 무엇을 처음 했을까? 이 글은 그 질문에서 출발한다.</p>
+
+<div class="box2">
+  <h3>이 글에서 확인할 마케팅 개념</h3>
+  <span class="term">다이렉트 마케팅</span><span class="term">반응 장치(response device)</span><span class="term">반응률</span><span class="term">A/B 테스트</span><span class="term">CRM</span><span class="term">로열티 프로그램</span><span class="term">관계 마케팅</span><span class="term">개인정보 보호</span>
+</div>
+
+<h2><span class="n">01</span>직접 파는 일은 이미 있었다</h2>
+
+<p>기업이 소비자에게 직접 다가가는 방식은 오래되었다. 15세기 베네치아의 출판업자 알두스 마누티우스는 자기가 파는 책의 목록을 인쇄했고, 1744년에는 벤저민 프랭클린이 학술 서적 카탈로그를 만들었다. 영국의 조시아 웨지우드도 카탈로그와 우편 견본으로 고객에게 다가갔다. <a href="wedgwood.html">앞선 글</a>에서 다룬 그 인물이다.</p>
+
+<p>우편 주문이 산업이 된 것은 19세기다. 영국의 프라이스 존스(Pryce Pryce-Jones)는 1861년 웨일스에서 카탈로그를 뿌려 우편으로 주문받는 사업을 시작했는데, 첫 근대적 우편 주문 사업으로 꼽힌다. 미국에서는 <strong>아론 몽고메리 워드(Aaron Montgomery Ward)</strong>가 1872년 시카고에서 우편 주문 사업을 시작해 시골 고객에게 도매가에 가까운 값으로 물건을 팔았다.</p>
+
+<figure class="img tall">
+  <img src="../assets/wunderman/ward-1875-p1.jpg" alt="몽고메리 워드 1875년 봄여름 카탈로그 표지">
+  <figcaption>몽고메리 워드 1875년 봄·여름 카탈로그 No. 13 표지 · Internet Archive / Wikimedia Commons (퍼블릭 도메인)</figcaption>
+</figure>
+
+<p>다만 이 시대의 우편 광고는 <strong>누가 어떻게 반응했는지를 체계적으로 쌓아 두고 활용하는 구조</strong>와는 거리가 멀었다. 주문서가 오면 팔고, 오지 않으면 모른다. 그 사이의 정보가 비어 있었다.</p>
+
+<h2><span class="n">02</span>쿠폰도, ‘반응 측정’도 이미 있었다</h2>
+
+<p>흔히 이런 설명을 본다. “운더맨이 쿠폰을 만들어 처음으로 광고 효과를 숫자로 측정했다.” 하지만 이것은 사실과 다르다.</p>
+
+<p>쿠폰은 19세기 말 코카콜라가 무료 음료 카드를 돌린 것이 처음으로 여겨진다. 또 광고인 <strong>클로드 홉킨스(Claude C. Hopkins, 1866–1932)</strong>는 우편 광고에 쿠폰을 넣고 문구를 바꿔 가며 반응을 비교하는 <strong>테스트 캠페인</strong>으로 광고비를 성과에 연결한 인물로 알려져 있다. 그의 책 『Scientific Advertising』(1923)은 지금도 읽힌다.</p>
+
+<p>그러면 운더맨은 무엇이 달랐을까? 그의 공헌은 <strong>쿠폰을 처음 썼다는 데 있지 않다.</strong> 흩어져 있던 방법들을 하나의 이름과 하나의 방식으로 묶었고, 그것을 대기업의 마케팅 전략 한가운데에 올려놓았다는 데 있다.</p>
+
+<h2><span class="n">03</span>호텔방에서 시작한 에이전시</h2>
+
+<p>운더맨은 1920년 뉴욕 브롱크스에서 오스트리아와 루마니아 이민자 부부의 아들로 태어났다. 정식 대학 학위는 없었다. 1947년 우편 주문 광고를 주로 하던 맥스웰 색하임 사에 카피라이터로 들어가, 우편 주문 광고가 단순한 판매 수단을 넘어 고객과 더 개인적인 관계를 만드는 방법이 될 수 있다고 보았다.</p>
+
+<p>1958년 8월 20일 그는 형 어빙, 동료 에드 리코타, 해리 클라인과 뉴욕의 하루 30달러짜리 호텔방에서 만나 <strong>Wunderman, Ricotta &amp; Kline(WR&amp;K)</strong>을 세웠다. 자본은 합쳐서 6만 달러, 직원은 일곱 명, 고객은 아직 없었다. 그런데도 첫해에 200만 달러 넘는 취급액을 올렸다고 한다.</p>
+
+<ul class="tl wide">
+  <li><b>1920</b>뉴욕 브롱크스 출생</li>
+  <li><b>1947</b>맥스웰 색하임 사에서 카피라이터로 출발</li>
+  <li><b>1958</b>WR&amp;K 설립 (후에 Young &amp; Rubicam에 인수되고 ‘Wunderman’으로 불림)</li>
+  <li><b>1967</b>‘Direct Marketing’이라는 용어를 정의 (MIT 강연)</li>
+  <li><b>1983</b>직접 마케팅 명예의 전당</li>
+  <li><b>1998</b>광고 명예의 전당</li>
+  <li><b>2019</b>별세, 향년 98세</li>
+</ul>
+
+<h2><span class="n">04</span>이름을 붙이다: Direct Marketing</h2>
+
+<p>1967년 운더맨은 이 접근 방식에 <strong>‘다이렉트 마케팅(direct marketing)’</strong>이라는 이름을 붙이고 정의했다. 위키백과는 이를 MIT 강연으로 소개한다. 이름이 생기면 하나의 분야가 된다. 흩어져 있던 우편 판매, 쿠폰, 카탈로그, 전화 주문이 “같은 원리의 다른 모습”으로 묶인 것이다.</p>
+
+<p>오늘날의 정의를 요약하면 이렇다.</p>
+
+<div class="pull">다이렉트 마케팅 = 미리 고른 고객에게 직접 제안을 전하고, <strong style="color:#7cc7f2">그 사람이 반응할 수 있는 통로</strong>를 함께 주는 마케팅.</div>
+
+<p>핵심은 두 가지다. 메시지가 <strong>특정한 사람</strong>에게 간다는 점, 그리고 <strong>반응할 수단</strong>이 함께 붙어 있다는 점이다. 반응 수단이 있으면 반응을 기록할 수 있고, 기록하면 다음 메시지를 고칠 수 있다. 보내고, 측정하고, 고치는 이 순환이 운더맨 방식의 뼈대다.</p>
+
+<h2><span class="n">05</span>광고에 ‘반응 장치’를 붙이다</h2>
+
+<p>운더맨과 그의 회사가 개발하거나 널리 퍼뜨린 것으로 알려진 장치들은 모두 <strong>소비자가 손쉽게 반응할 수 있게 하고, 그 반응이 기록되게 하는</strong> 것들이다.</p>
+
+<table>
+  <tr><th>반응 장치</th><th>어떻게 작동했나</th><th>오늘의 후손</th></tr>
+  <tr><td>잡지 구독 카드</td><td>잡지에 끼워 넣은 엽서를 뜯어 보내면 구독 신청</td><td>회원가입 버튼, 랜딩페이지 폼</td></tr>
+  <tr><td>수신자 부담 전화번호 (1-800)</td><td>도요타 캠페인을 위해 개발된 것으로 전해지며, 전화 한 통으로 주문과 문의</td><td>고객센터, 챗봇, 앱 내 문의</td></tr>
+  <tr><td>Columbia Record Club</td><td>우편으로 회원을 모집하고 음반을 정기 발송하는 회원제 음반 클럽(WR&amp;K가 개발·홍보에 관여)</td><td>구독 서비스, 정기 배송</td></tr>
+  <tr><td>쿠폰/반응 우편</td><td>우편을 받은 사람 중 누가 쿠폰을 썼는지 기록</td><td>쿠폰 코드, 추적 링크, 이메일 열람/클릭</td></tr>
+</table>
+
+<p>전화번호 이야기는 정확히 해 둘 필요가 있다. 미국에서 수신자 부담 전화 서비스 자체는 1967년 5월 벨 시스템이 도입했다. 운더맨의 공은 이 서비스를 <strong>광고의 반응 수단으로 가져온 것</strong>이다. 번호를 발명했다는 표현은 정확하지 않다.</p>
+
+<h2><span class="n">06</span>측정이 데이터가 되고, 데이터가 관계가 되다</h2>
+
+<p>반응을 기록하면 이런 질문에 답할 수 있다.</p>
+<ul class="src" style="font-size:16px;color:var(--ink)">
+  <li>어떤 메시지가 더 높은 반응률을 냈나?</li>
+  <li>어떤 고객이 더 오래, 더 자주 사나?</li>
+  <li>어떤 지역에서 반응이 좋은가?</li>
+</ul>
+<p>이 질문들은 오늘의 <span class="term">CTR</span><span class="term">전환율</span><span class="term">A/B 테스트</span><span class="term">CRM</span>과 그대로 이어진다. 다만 “운더맨이 이 지표들을 처음 만들었다”가 아니라 “이 지표들이 기대는 사고방식이 이 시기에 체계가 잡혔다”로 읽는 것이 정확하다.</p>
+
+<p>그리고 한 걸음 더 나아가면 <strong>관계</strong>가 나온다. 고객의 반응을 기록해 두면 그 사람에게 맞는 다음 제안을 할 수 있다. 위키백과는 운더맨이 오랫동안 함께한 아메리칸 익스프레스(AMEX)와의 작업이 첫 고객 보상 프로그램으로 이어졌다고 쓴다. 쓸수록 더 큰 혜택을 주어 고객을 브랜드에 묶어 두는 방식이다.</p>
+
+<div class="box2">
+  <h3>짚고 넘어갈 점</h3>
+  AMEX의 보상 프로그램을 “세계 최초의 현대적 마일리지 프로그램”이라고 쓰는 글이 많은데, 이는 정확하지 않다. 항공사 마일리지는 1981년 아메리칸 항공의 AAdvantage 등 이미 시작되어 있었다. 위키백과의 표현은 “<em>고객 보상 프로그램</em>이 AMEX와의 관계에서 나왔다”는 정도다. 카드 업계에 들어온 보상 프로그램이라는 점은 의미가 크지만, ‘세계 최초’라는 수식어는 근거가 약하다.
+</div>
+
+<p>이처럼 다이렉트 마케팅은 한 번 팔고 끝나는 거래에서 <strong>고객과의 지속적인 관계</strong>로 시선을 옮겼다. 오늘의 <span class="term">관계 마케팅</span><span class="term">로열티 프로그램</span>이 여기서 이어진다.</p>
+
+<div class="video">
+  <div class="box"><iframe src="https://www.youtube.com/embed/WW0oc5L5nfA" title="Lester Wunderman, Creator of Modern-Day Direct Marketing (part 1/3)" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+  <p>영상: Lester Wunderman, Creator of Modern-Day Direct Marketing (1/3), Smithsonian National Postal Museum. 운더맨이 직접 자신의 생각을 설명한다.</p>
+</div>
+
+<h2><span class="n">07</span>그래서 그는 ‘창시자’일까?</h2>
+
+<table>
+  <tr><th>이전에 있었던 것</th><th>운더맨이 더한 것</th></tr>
+  <tr><td>카탈로그와 우편 주문 (웨지우드, 워드)</td><td>이를 하나의 분야로 정의하고 ‘다이렉트 마케팅’이라는 이름을 붙임</td></tr>
+  <tr><td>쿠폰과 반응 테스트 (코카콜라, 홉킨스)</td><td>반응 장치를 대기업 광고의 표준 설계로 확장</td></tr>
+  <tr><td>단발성 판매</td><td>반응 데이터와 보상으로 고객과의 장기 관계를 설계</td></tr>
+</table>
+
+<p>위키백과는 그를 “현대 다이렉트 마케팅의 창시자로 널리 여겨지는 인물”이라고 소개하고, 다이렉트 마케팅 항목에서는 “현대 다이렉트 마케팅의 아버지로 간주된다”고 쓴다. 즉 <strong>“널리 그렇게 여겨진다”는 평가이지 “처음 한 사람”이라는 뜻이 아니다.</strong></p>
+
+<div class="pull">운더맨이 처음으로 반응을 측정한 사람은 아니다. 그러나 <strong style="color:#7cc7f2">측정할 수 있는 구조를 마케팅의 중심에 놓고, 그것에 이름을 붙여 하나의 분야로 만든 사람</strong>이다.</div>
+
+<p>웨지우드가 “이미 있던 기법을 하나의 사업 전략으로 결합한 사람”이었던 것과 같은 이야기다. 마케팅의 역사에서 ‘최초’보다 중요한 것은 흔히 <strong>‘체계화’</strong>다.</p>
+
+<h2><span class="n">08</span>오늘의 이야기: 개인화의 편리함과 부담</h2>
+
+<p>운더맨의 방식은 오늘날 훨씬 정교해졌다. 우편이 이메일과 앱 알림으로, 쿠폰이 추적 링크와 개인별 할인 코드로 바뀌었다. 그만큼 새로운 문제도 생겼다. 원치 않는 메시지가 쏟아지고, 개인 정보가 어떻게 쓰이는지 알기 어렵다. 그래서 미국의 CAN-SPAM 법처럼 광고성 메시지를 규제하는 법도 만들어졌다.</p>
+
+<p>“나에게만 온 메시지”는 편리하기도 하고 불편하기도 하다. 직접 마케팅을 배우는 사람이라면 <strong>어디까지가 도움이고 어디부터가 침해인지</strong>를 함께 생각해야 한다.</p>
+
+<div class="box2 q">
+  <h3>생각해 볼 질문</h3>
+  <ol>
+    <li>쿠폰 코드와 추적 링크는 어떤 점에서 운더맨의 ‘반응 장치’와 같고, 어떤 점에서 다른가?</li>
+    <li>이미 있던 방법을 묶어 이름을 붙이는 일은 ‘창시’로 인정할 만한가? 다른 분야의 사례를 찾아보자.</li>
+    <li>내가 자주 받는 개인화 메시지 하나를 골라, 어떤 반응 데이터를 모으고 있을지 추측해 보자.</li>
+    <li>아마존 판매자라면 쿠폰, 광고 검색어 리포트, 구독 할인(Subscribe &amp; Save)에서 어떤 ‘반응 데이터’를 얻을 수 있을까?</li>
+  </ol>
+</div>
+
+<h2><span class="n">참고</span>출처와 이미지</h2>
+<ul class="src">
+  <li>Wikipedia, “Lester Wunderman”, “Direct marketing”, “Claude C. Hopkins”, “Aaron Montgomery Ward”, “Columbia House”, “Toll-free telephone number”, “Frequent-flyer program”</li>
+  <li>Lester Wunderman, <em>Being Direct: Making Advertising Pay</em> (1997; 2004년 개정)</li>
+  <li>Claude C. Hopkins, <em>Scientific Advertising</em> (1923)</li>
+  <li>이미지: Wikimedia Commons. 코카콜라 쿠폰(Coca-Cola Company), 몽고메리 워드 카탈로그(Internet Archive). 둘 다 퍼블릭 도메인.</li>
+  <li>영상은 YouTube 임베드이며 Smithsonian National Postal Museum의 저작물이다.</li>
+</ul>
+</article>
+
+<div class="back"><a href="../index.html#notes">← Random Walk로 돌아가기</a></div>
+<footer>© Jake Sang-Uk Jung</footer>
+<script>
+const bar=document.getElementById('bar');
+addEventListener('scroll',()=>{const h=document.documentElement;bar.style.transform='scaleX('+(h.scrollTop/(h.scrollHeight-h.clientHeight))+')'},{passive:true});
+</script>
+</body>
+</html>
