@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jake Sang-Uk Jung · Marketing Professor · HUFS</title>
-<meta name="description" content="Sang-Uk Jung, Professor of Marketing at Hankuk University of Foreign Studies. Marketing analytics, NLP, empirical generalizations.">
+<meta name="description" content="Sang-Uk Jung, Professor of Marketing at HUFS. Empirical generalization, AI for scientific discovery, and theory-informed machine learning.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sangukjung.com/">
 <meta property="og:title" content="Jake Sang-Uk Jung · Marketing Professor · HUFS">
-<meta property="og:description" content="마케팅 퀀트, 한국외국어대학교 교수. 통계와 NLP로 시장을 읽습니다.">
+<meta property="og:description" content="Finding Patterns. Discovering Laws. 경험적 일반화에서 AI 과학적 발견까지.">
 <meta property="og:image" content="https://sangukjung.com/assets/sitting.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,6 +63,28 @@ h2 em{color:var(--blue);font-style:italic}
 .sub{color:var(--mute);max-width:40em;font-size:17px}
 .reveal{opacity:0;transform:translateY(26px);transition:1s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
+
+
+/* HERO slogan */
+.hero .slogan{font-size:clamp(24px,2.6vw,36px);line-height:1.2;margin:0 0 14px;color:#fff;font-style:italic}
+.hero .slogan em{color:var(--gold)}
+.hero p.lead{margin-top:0}
+
+/* DIRECTIONS */
+.dirs{background:var(--paper)}
+.dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:46px}
+.dcard{position:relative;background:#fff;border:1px solid #e6dfcf;padding:34px 30px 30px;display:flex;flex-direction:column;transition:.35s;overflow:hidden}
+.dcard::before{content:'';position:absolute;left:0;top:0;height:3px;width:0;background:var(--blue);transition:.5s}
+.dcard:hover{transform:translateY(-8px);box-shadow:0 28px 60px #0b173022;border-color:var(--blue)}
+.dcard:hover::before{width:100%}
+.dcard .no{font-family:'Cormorant Garamond',serif;font-size:64px;line-height:1;color:#1e9be033;position:absolute;right:22px;top:14px}
+.dcard .lab-l{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.dcard h3{font-family:'Cormorant Garamond','Noto Serif KR',serif;font-size:29px;line-height:1.15;margin:10px 0 14px;padding-right:44px}
+.dcard .q{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;line-height:1.3;color:var(--blue);margin-bottom:14px}
+.dcard p.d{font-size:14.5px;color:var(--mute);margin-bottom:20px}
+.dcard .kw{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}
+.dcard .kw span{font-size:11.5px;padding:4px 11px;border:1px solid #d9d2c0;border-radius:20px;color:var(--ink)}
+@media(max-width:980px){.dgrid{grid-template-columns:1fr}}
 
 /* ABOUT */
 .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
@@ -152,6 +174,7 @@ footer .p{font-size:12px;margin-top:30px;opacity:.7}
   <ul>
     <li><a href="#about">About</a></li>
     <li><a href="#training">Training Log</a></li>
+    <li><a href="#directions">Directions</a></li>
     <li><a href="#galaxy">Papers</a></li>
     <li><a href="#notes">Random Walk</a></li>
     <li><a href="#lab">Lab</a></li>
@@ -162,13 +185,14 @@ footer .p{font-size:12px;margin-top:30px;opacity:.7}
 <header class="hero">
   <canvas id="bg"></canvas>
   <div class="txt">
-    <div class="eyebrow">Marketing · Quantitative · Computational</div>
+    <div class="eyebrow">Empirical Laws · Scientific AI · Quantitative Marketing</div>
     <h1>Jake<br>Sang-Uk <em>Jung</em></h1>
-    <p class="lead">Professor of Marketing at Hankuk University of Foreign Studies. 통계로 소비자를 읽고, 텍스트에서 시장의 속마음을 꺼내는 마케팅 퀀트입니다.</p>
+    <p class="slogan serif">Finding Patterns. <em>Discovering Laws.</em></p>
+    <p class="lead">Professor of Marketing at Hankuk University of Foreign Studies.<br>From empirical regularities in consumer behavior to AI-assisted scientific discovery.</p>
     <div class="typed mono" id="typed"></div>
     <div class="cta">
-      <a class="btn primary" href="#galaxy">Explore the papers</a>
-      <a class="btn" href="#training">Training log</a>
+      <a class="btn primary" href="#directions">Research Directions</a>
+      <a class="btn" href="#galaxy">Explore the Papers</a>
     </div>
   </div>
   <div class="portrait">
@@ -184,9 +208,11 @@ footer .p{font-size:12px;margin-top:30px;opacity:.7}
     <div class="pic reveal"><img src="assets/tennis.jpg" alt="Tennis"></div>
     <div class="reveal">
       <div class="eyebrow">About</div>
-      <h2>숫자로 읽고,<br><em>웃으며</em> 가르칩니다.</h2>
-      <p>서울대에서 경영학을, 컬럼비아에서 통계학을, 아이오와에서 마케팅 박사를 마쳤습니다. 오클랜드 대학교를 거쳐 2014년부터 한국외국어대학교에서 학생들과 데이터를 읽고 있습니다.</p>
-      <p>관심사는 자연어처리(NLP)로 텍스트에서 마케팅 인사이트를 뽑는 일, 마케팅 애널리틱스, 그리고 "정말 어디서나 성립하는 법칙인가?"를 묻는 경험적 일반화입니다. 가끔은 게임, 항공, 에너지, 화장품 같은 엉뚱한 곳에서도 답을 찾습니다.</p>
+      <h2>숫자로 읽고,<br><em>법칙</em>을 탐구합니다.</h2>
+      <p>서울대에서 경영학을, 컬럼비아에서 통계학을, 아이오와에서 마케팅 박사를 마쳤습니다. 오클랜드 대학교를 거쳐 2014년부터 한국외국어대학교에서 가르치고 있습니다.</p>
+      <p>저의 연구는 Andrew Ehrenberg의 경험적 일반화(Empirical Generalization) 전통에 기반합니다. 소비자와 시장에서 반복적으로 관찰되는 규칙성을 발견하고, 이를 간결한 통계적 모형으로 설명하는 데 관심을 두고 있습니다.</p>
+      <p>최근에는 AI for Scientific Discovery와 Scientific Machine Learning으로 연구의 범위를 넓히고 있습니다. 특히 데이터에서 발견된 수학적 관계가 언제 일반화 가능한 과학적 지식이 되는지 탐구하고자 합니다.</p>
+      <p>자연어처리(NLP), 마케팅 애널리틱스, 소비자 선택모형은 이러한 연구를 연결하는 중요한 도구이자 응용 분야입니다.</p>
       <div class="stats">
         <div><b data-n="1433">0</b><span>Citations</span></div>
         <div><b data-n="12">0</b><span>h-index</span></div>
@@ -208,6 +234,40 @@ footer .p{font-size:12px;margin-top:30px;opacity:.7}
       <div class="ep reveal"><div class="k mono">epoch 4</div><h3>University of Iowa</h3><p>Ph.D. in Marketing · 마케팅</p><span class="loss mono">feature learned: 소비자는 확률분포다</span></div>
       <div class="ep reveal"><div class="k mono">deploy · 2012–14</div><h3>University of Auckland</h3><p>교수 · 마케팅</p></div>
       <div class="ep now reveal"><div class="k mono">production · 2014 → now</div><h3>Hankuk University of Foreign Studies</h3><p>Professor of Marketing · 한국외국어대학교 경영학부</p><span class="loss mono">status: still learning</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="dirs" id="directions">
+  <div class="wrap">
+    <div class="eyebrow">Research</div>
+    <h2>Research <em>Directions</em></h2>
+    <p class="sub">반복되는 규칙을 찾고, 그것이 정말 법칙인지 묻습니다. 세 개의 질문이 지금의 연구를 이끌고 있습니다.</p>
+    <div class="dgrid">
+      <article class="dcard reveal">
+        <span class="no">01</span>
+        <div class="lab-l">Emerging Research Direction</div>
+        <h3>AI for Scientific Discovery</h3>
+        <div class="q">Can AI discover generalizable scientific laws?</div>
+        <p class="d">Exploring AI-assisted discovery of mathematical relationships and the reliability, interpretability, and generalizability of scientific models.</p>
+        <div class="kw"><span>Symbolic Regression</span><span>Equation Discovery</span><span>Scientific Machine Learning</span></div>
+      </article>
+      <article class="dcard reveal">
+        <span class="no">02</span>
+        <div class="lab-l">Foundational Research</div>
+        <h3>Empirical Generalization</h3>
+        <div class="q">Are there generalizable laws of consumer behavior?</div>
+        <p class="d">Investigating recurring empirical patterns in consumer purchasing, brand performance, and market behavior through quantitative models and differentiated replication.</p>
+        <div class="kw"><span>Quantitative Marketing</span><span>Consumer Choice</span><span>Stochastic Models</span></div>
+      </article>
+      <article class="dcard reveal">
+        <span class="no">03</span>
+        <div class="lab-l">Applied Research</div>
+        <h3>Theory-Informed AI &amp; Marketing</h3>
+        <div class="q">Can established marketing knowledge improve AI?</div>
+        <p class="d">Integrating marketing theory, probabilistic models, and machine learning to improve prediction and inference.</p>
+        <div class="kw"><span>Theory-Informed ML</span><span>Probabilistic Models</span><span>Marketing Analytics</span></div>
+      </article>
     </div>
   </div>
 </section>
